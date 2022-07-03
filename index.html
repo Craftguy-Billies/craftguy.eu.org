@@ -162,12 +162,116 @@
    transform:translateY(3px);
    box-shadow: 1px 1px #8f8f8f;
  }
+ .menu{
+   margin-left:auto;
+   z-index:2000;
+ }
+ .container {
+   display:flex;
+ }
+ .menu:hover{
+   cursor:pointer;
+ }
+ .list{
+   position:absolute;
+   margin:0px;
+   width:30%;
+   height:300vh;
+   background-color:#5e64ff;
+   z-index: 1000;
+   right:0;
+   transform:translateX(100%);
+   text-align:center;
+   font-family:Consolas;
+   font-size:3vw;
+   color:#000;
+ }
+ #menu-label{
+   background-image: url(image/menu.png);
+   z-index:2000;
+ }
+ #menu:checked ~ div.list{
+   transform:translateX(0);
+   transition-delay:0.3s;
+   transition-duration: 0.6s;
+   transition-timing-function: ease-in-out;
+ }
+ #menu:not(:checked) ~ div.list{
+   transform:translateX(100%);
+   transition-delay:0.3s;
+   transition-duration:0.6s;
+   transition-timing-function: ease-in-out;
+ }
+ #menu{
+   display:none;
+ }
+ #menu:checked ~ div label img{
+   transform:rotate(180deg);
+   transition-delay:0.3s;
+   transition-timing-function: ease-in-out;
+   transition-duration:0.6s;
+ }
+ #menu:not(:checked) ~ div label img{
+   transform:rotate(-180deg);
+   transition-delay:0.3s;
+   transition-timing-function: ease-in-out;
+   transition-duration:0.6s;
+ }
+div body{
+   margin-top:0;
+   height:900px;
+}
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+.list .list-opacity{
+  background-color: aquamarine;
+  width:100%;
+  height:100px;
+  opacity:50%;
+}
+.list .list-opacity2{
+  background-color: aquamarine;
+  width:100%;
+  min-height:100%;
+  opacity:50%;
+}
+.links{
+  height:7vw;
+  width:100%;
+  line-height:7vw;
+  cursor:pointer;
+  border: 1.5px solid #272b96;
+}
+.links:hover{
+  background-color: #4044c7;
+}
+.links:active{
+  background-color: #3337b0;
+}
+#blanks{
+  width:100%;
+  height:30px;
+}
 </style>
 </head>
-<body>
+<div>
+  <input type="checkbox" id="menu">
+  <div class="list">
+    <div class="list-opacity"></div>
+    <a href="https://fishing-family.coms.hk/"><div class="links" style="border-bottom:0.75px solid #272b96">Fishing Family&trade;</div></a>
+    <a href="https://www.youtube.com/c/Craftguy/"><div class="links" style="border-top:0.75px solid #272b96;border-bottom:0.75px solid #272b96">Craftguy&trade; YouTube</div></a>
+    <a href="http://music.fishing-family.tk/"><div class="links" style="border-top:0.75px solid #272b96">Music</div></a>
+    <div class="list-opacity2"></div>
+ </div>
+  <body id="whole"><div class="dark">
+   <div class="container">
     <div class="header">
         <div><img src="image/craftguylogo.jpg" style="width:60px;display:inline-block;"></div>
         <div class="header-words">Craftguy&trade;</div>
+    </div>
+    <div class="menu"><label for="menu" id="menu-label"><img src="image/menu.png" style="width:80px;margin-top:7px;"></label></div>
     </div>
     <table class="category">
         <tr>
@@ -207,10 +311,11 @@
          Instagram: billiez15<div></div>
          Bilibili: Craftguy
          <div class="button"><a class="email" href="mailto:kwantszlong1555@gmail.com">Email me</a></div>
+         <div id="blanks"></div>
          <div class="button"><a class="email" href="https://www.youtube.com/c/Craftguy?sub_confirmation=1/" style="background-color: #f8ff96;font-size:4.2vw;border:1.9px solid #02083d;">Subscribe Craftguy to Support Me!</a></div>
       </div>
     </div>
-    <div style="font-family: Impact; font-style: normal; font-weight: 400; font-size: 36px; color: #000B43;position:absolute;top:2000px;">Copyright &copy; Craftguy&trade;. All rights reserved.</div>
-    <p>&nbsp;</p>
-</body>
+    <script>$('#radio1').prop('checked',true);
+    </script></div>
+</body></div>
 </html>
