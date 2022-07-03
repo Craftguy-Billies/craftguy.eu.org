@@ -1,14 +1,66 @@
 <!doctype html>
-<html>
 <head>
-<meta charset="utf-8">
-<title>無標題文件</title>
-	<style>
-
-	</style>
+<title>Craftguy&trade;</title>
+<style>
+    body{
+        background-color:aquamarine;
+    }
+    .header{
+        display:flex;
+        background-color:#fff;
+        width:220px;
+        padding: 10px 15px 10px;
+        border: 2px double #000;
+        margin-bottom:15px;
+    }
+    .header-words {
+        display:inline-block;
+        line-height:60px;
+        height:60px;
+        background-color:#fff;
+        vertical-align:top;
+        padding: 0px 10px 0px 10px;
+        font-size:30px;
+        color:#000;
+        font-family:Consolas;
+    }
+ table {
+    width:100%;
+    table-layout: fixed;
+ }
+ th {
+    color: #000;
+    background-color:bisque;
+    font-size: 35px;
+    font-family: Consolas;
+    border:1.5px solid #000;
+ }
+ th:hover {
+    background-color: #d4b935;
+    cursor: pointer;
+ }
+ #radio1 {
+    display:none;
+ }
+ #radio2 {
+    display:none;
+ }
+ #radio3 {
+    display:none;
+ }
+</style>
 </head>
-
 <body>
-	
+    <div class="header">
+        <div><img src="image/craftguylogo.jpg" style="width:60px;display:inline-block;"></div>
+        <div class="header-words">Craftguy&trade;</div>
+    </div>
+    <table class="category">
+        <tr><label for="radio1" id="one"><th>About</th></label><label for="radio2" id="two"><th>Achievements</th></label><label id="three" for="radio3"><th>Contact Me</th></label></tr>
+    </table>
+    <input type="radio" id="radio1" name="abc">
+    <input type="radio" id="radio2" name="abc">
+    <input type="radio" id="radio3" name="abc">
+    
 </body>
 </html>
