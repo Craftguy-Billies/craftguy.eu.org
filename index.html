@@ -118,6 +118,50 @@
  #radio3:checked ~ #b3 {
     display:block;
  }
+ .headings{
+   font-family: Consolas;
+   font-size: 30px;
+   text-decoration: underline;
+   padding-left: 15px;
+   padding-top:10px;
+   margin-bottom:15px;
+ }
+ .contents{
+   font-size:20px;
+   text-decoration:none;
+   padding-left:15px;
+   line-height:25px;
+ }
+ a{
+   text-decoration:none;
+   color: #000;
+ }
+ a:hover{
+   color:#000;
+ }
+ div.button{
+   margin-top:2em;
+ }
+ .email{
+   font-size: 40px;
+   font-weight: bold;
+   background-color: #b0baff;
+   padding:10px 5px;
+   border: 1.9px solid #051b69;
+   border-radius: 5px;
+   box-shadow: 1px 4px #8f8f8f;
+ }
+ .email:hover{
+   background-color: #5b6cde;
+ }
+ .email:active{
+   background-color:#3344b5;
+   box-shadow: 1px 1px #8f8f8f;
+ }
+ .button:active{
+   transform:translateY(3px);
+   box-shadow: 1px 1px #8f8f8f;
+ }
 </style>
 </head>
 <body>
@@ -135,9 +179,35 @@
     <input type="radio" id="radio1" name="abc">
     <input type="radio" id="radio2" name="abc">
     <input type="radio" id="radio3" name="abc">
-    <div id="b1"></div>
-    <div id="b2"></div>
-    <div id="b3"></div>
+    <div id="b1">
+      <div class="headings">
+
+      </div>
+      <div class="contents">
+
+      </div>
+    </div>
+    <div id="b2">
+      <div class="headings">
+         Major Achievements:
+      </div>
+      <div class="contents">
+         -Reached 900k views<div></div>
+         -Reached 3k subscribers<div></div>
+      </div>
+    </div>
+    <div id="b3">
+      <div class="headings">
+         Contact information:
+      </div>
+      <div class="contents">
+         Email: kwantszlong1555@gmail.com<div></div>
+         Youtube: Craftguy (Chinese Channel)<div></div>
+         Youtube: Craftguy (English Channel)<div></div>
+         Instagram: billiez15
+         <div class="button"><a class="email" href="mailto:kwantszlong1555@gmail.com">Email me</a></div>
+      </div>
+    </div>
     <div style="font-family: Impact; font-style: normal; font-weight: 400; font-size: 36px; color: #000B43;position:absolute;top:2000px;">Copyright &copy; Fishing Family Network&trade;. All rights reserved.</div>
     <p>&nbsp;</p>
 </body>
