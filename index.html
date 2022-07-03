@@ -2,6 +2,12 @@
 <head>
 <title>Craftguy&trade;</title>
 <meta name="theme-color" content="#f8fa75">
+<meta name="keywords" content="craftguy,youtube craftguy,craftguy youtube,youtube">
+<meta name="description" content="Craftguy&trade; is the main page of Craftguy.">
+<link href="data:image/x-icon;base64,AAABAAEAEBAQAAEABAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAgAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA/4QAAP/3AACR/9wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEREREREREREQAAAAAAAAARAREREREREBEBMzMzMzMQEQEzMzMzMxARATMREREzEBEBMxAAATMQEQEzEAABMxARAREQAAEREBEAAAAAAAAAEQEREAABERARASIQAAEiEBEBIhAAASIQEQEREAABERARAAAAAAAAABEREREREREREAAAAAf/4AAEACAABAAgAAQAIAAEACAABDwgAAQ8IAAEPCAAB//gAAQ8IAAEPCAABDwgAAQ8IAAH/+AAAAAAAA" rel="icon" type="image/x-icon" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 <style>
     body{
         background-color:aquamarine;
@@ -35,10 +41,25 @@
     font-size: 35px;
     font-family: Consolas;
     border:1.5px solid #000;
+    border-radius:7px;
+    box-shadow: 1px 1px 3px #9d9da3;
  }
  th:hover {
     background-color: #d4b935;
     cursor: pointer;
+ }
+ th:active {
+   background-color: #99871f;
+   transform:translate(1px,1px)
+ }
+ label{
+    width:100%;
+    min-height: 100%; 
+    height: auto; 
+    display: inline-block;
+ }
+ label:hover {
+    cursor:pointer;
  }
  #radio1 {
     display:none;
@@ -49,6 +70,54 @@
  #radio3 {
     display:none;
  }
+ #b1 {
+    width:100%;
+    height:1000px;
+    background-color: #69fcff;
+    margin-top:10px;
+    border: 1.5px double #000;
+    font-size: 25px;
+    color: #000;
+    font-family: Consolas;
+    position:absolute;
+    display:none;
+    border-radius:7px;
+ }
+ #b2 {
+    width:100%;
+    height:1000px;
+    background-color: #ffff94;
+    margin-top:10px;
+    border: 1.5px double #000;
+    font-size: 25px;
+    color: #000;
+    font-family: Consolas;
+    position:absolute;
+    display:none;
+    border-radius:7px;
+ }
+ #b3 {
+    width:100%;
+    height:1000px;
+    background-color: #fca7af;
+    margin-top:10px;
+    border: 1.5px double #000;
+    font-size: 25px;
+    color: #000;
+    font-family: Consolas;
+    position:absolute;
+    display:none;
+    border-radius:7px;
+ }
+ #radio1:checked ~ #b1 {
+    display:block
+ }
+ #radio2:checked ~ #b2 {
+    display:block;
+ }
+ #radio3:checked ~ #b3 {
+    display:block;
+ }
 </style>
 </head>
 <body>
@@ -57,11 +126,19 @@
         <div class="header-words">Craftguy&trade;</div>
     </div>
     <table class="category">
-        <tr><label for="radio1" id="one"><th>About</th></label><label for="radio2" id="two"><th>Achievements</th></label><label id="three" for="radio3"><th>Contact Me</th></label></tr>
+        <tr>
+            <th><label for="radio1" id="one">About</label></th>
+            <th><label for="radio2" id="two">Achievements</label></th>
+            <th><label for="radio3" id="three">Contact Me</label></th>
+        </tr>
     </table>
     <input type="radio" id="radio1" name="abc">
     <input type="radio" id="radio2" name="abc">
     <input type="radio" id="radio3" name="abc">
-    
+    <div id="b1"></div>
+    <div id="b2"></div>
+    <div id="b3"></div>
+    <div style="font-family: Impact; font-style: normal; font-weight: 400; font-size: 36px; color: #000B43;position:absolute;top:2000px;">Copyright &copy; Fishing Family Network&trade;. All rights reserved.</div>
+    <p>&nbsp;</p>
 </body>
 </html>
