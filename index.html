@@ -78,7 +78,7 @@
  }
  #b1 {
     width:95%;
-    height:1000px;
+    height:1500px;
     background-color: #69fcff;
     margin-top:10px;
     border: 1.5px double #000;
@@ -91,7 +91,7 @@
  }
  #b2 {
     width:95%;
-    height:1000px;
+    height:1500px;
     background-color: #ffff94;
     margin-top:10px;
     border: 1.5px double #000;
@@ -104,7 +104,7 @@
  }
  #b3 {
     width:95%;
-    height:1000px;
+    height:1500px;
     background-color: #fca7af;
     margin-top:10px;
     border: 1.5px double #000;
@@ -188,8 +188,7 @@
    z-index: 1000;
    text-align:center;
    font-family:Consolas;
-   font-size:7.5vw;
-   line-height:7.5vw;
+   font-size:5.5vw;
    color:#000;
    box-shadow: 5px 4px 3px #706d7d;
  }
@@ -236,9 +235,9 @@ html, body {
 }
 
 .links{
-  height:14vw;
+  height:12vw;
   width:100%;
-  line-height:14vw;
+  line-height:12vw;
   cursor:pointer;
   border: 1.5px solid #272b96;
   background-color: #3b3eff;
@@ -246,9 +245,11 @@ html, body {
 }
 .links:hover{
   background-color: #4044c7;
+  transform: scale(1.05);
 }
 .links:active{
   background-color: #3337b0;
+  transform: scale(1.05);
 }
 #blanks{
   width:100%;
@@ -261,21 +262,46 @@ html, body {
 }
 #menu-toggle:hover{
   background-color:#4448c4;
+  transform: scale(1.05);
 }
 #menu-toggle:active{
   background-color:#3344b5;
+  transform: scale(1.05);
+}
+#menu-toggle2{
+ position:absolute;
+ top:100px;
+ background-color:#6668f2
+}
+#menu-toggle2:hover{
+  background-color:#4448c4;
+  transform: scale(1.05);
+}
+#menu-toggle2:active{
+  background-color:#3344b5;
+  transform: scale(1.05);
 }
 #open-list:checked ~ div.list #menu-toggle{
-  transform:translateY(14.18vw);
+  transform:translateY(12.15vw);
+  transition-duration: 0.4s;
+  transition-timing-function: ease-in-out;
+}
+#open-list:checked ~ div.list #menu-toggle2{
+  transform:translateY(24.3vw);
   transition-duration: 0.4s;
   transition-timing-function: ease-in-out;
 }
 #open-list:checked ~ div.list #second{
-  transform:translateY(14.18vw);
+  transform:translateY(24.3vw);
   transition-duration: 0.4s;
   transition-timing-function: ease-in-out;
 }
 #open-list:not(:checked) ~ div.list #menu-toggle{
+  transform:translateY(0);
+  transition-duration: 0.4s;
+  transition-timing-function: ease-in-out;
+}
+#open-list:not(:checked) ~ div.list #menu-toggle2{
   transform:translateY(0);
   transition-duration: 0.4s;
   transition-timing-function: ease-in-out;
@@ -298,6 +324,16 @@ html, body {
   transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
 }
+#open-list:checked ~ .down{
+  transform: rotate(180deg);
+}
+#open-list:not(:checked) ~ .down{
+  transform: rotate(-180deg);
+}
+#second{
+  height:12vw;
+}
+
 </style>
 </head>
 <div>
@@ -314,6 +350,7 @@ html, body {
     <div class="list-opacity"></div>
     <a href="#"><label for="open-list" id="open-peni"><div class="links" style="border-bottom:0.75px solid #272b96;z-index:2;position:relative;box-shadow:none;">Fishing Family&trade;&nbsp;<i class="arrow down"></i></i></div></label></a>
     <a href="http://music.fishing-family.tk/"><div class="links" id="menu-toggle">Music</div></a>
+    <a href="http://record.fishing-family.tk/"><div class="links" id="menu-toggle2">Records</div></a>
     <a href="https://www.youtube.com/c/Craftguy/"><div id="second" class="links" style="border-top:0.75px solid #272b96;border-bottom:1.5px solid #272b96">Craftguy&trade; YouTube</div></a>
  </div>
   <body id="whole"><div class="dark">
@@ -336,10 +373,30 @@ html, body {
     <input type="radio" id="radio3" name="abc">
     <div id="b1">
       <div class="headings">
-
+        Craftguy&trade; Brief History
       </div>
       <div class="contents">
-
+        Craftguy&trade; is a YouTube channel founded in 31st December, 2016. The first upload on Craftguy&trade; was the "How to Make a Very Easy Paper Finger Weapon" video, uploaded in 1st January, 2017. This video symbolizes the official debut of Craftguy&trade;.
+        <div>&nbsp;</div>
+        The first few videos uploaded in the Craftguy&trade; YouTube channel has no custom thumbnails until Craftguy realizes there wasn't any viewers for his videos. 
+        <div>&nbsp;</div>
+        The first popular video of Craftguy&trade; starts goes viral after Craftguy changed and optimized all his video thumbnails. The video was "How to Make an Easy Paper Bow and Arrow".
+        <div>&nbsp;</div>
+        Since then, Craftguy&trade; expanded its target audiences by increasing the video diversity, ranging from paper crafts to popsicle stick crafts.
+        <div>&nbsp;</div>
+        With more advanced technology and software, Craftguy&trade; improved his video quality significantly since 2021, as well as expanding his video coverage to China and European countries by setting up his Bilibili and YouTube English channel.
+        <div>&nbsp;</div>
+        Up till now, Craftguy has more than 100 public videos uploaded to YouTube and Bilibili, and having more than 1M views and 10M impressions in total for all of his videos.
+      </div>
+      <div class="headings" style="margin-top:45px;margin-bottom:15px;">
+        Craftguy&trade; Current Situation and Future Expectations
+      </div>
+      <div class="contents">
+        Craftguy&trade; is currently having a stable views and revenue from his videos.
+        <div>&nbsp;</div>
+        With AI technology becoming more mature and prevalent, Craftguy&trade; aims to further improve his video quality and post-production workflow by introducing more AI-powered softwares in the video processing work.
+        <div>&nbsp;</div>
+        With a simplified workflow and increased video production efficiency, Craftguy&trade; can certainly brings a better video experience to all audiences in the future.
       </div>
     </div>
     <div id="b2">
@@ -347,8 +404,18 @@ html, body {
          Major Achievements:
       </div>
       <div class="contents">
-         -Reached 900k views<div></div>
-         -Reached 3k subscribers<div></div>
+         -Reached 900k views(Chinese channel)<div></div>
+         -Most popular video reached 200k views(Chinese channel)<div></div>
+         -Reached 3k subscribers(Chinese channel)<div></div>
+         -Reached 150k views(English channel)<div></div>
+         -Reached 800 subscribers(English channel)<div></div>
+         -Reached 150k views(Bilibili channel)<div></div>
+         -Reached 600 subscribers(Bilibili channel)<div></div>
+         <div>&nbsp;</div>
+         <div style="font-weight:bold">
+          -Reached 1M views(total)<div></div>
+         -Reached 5k subscribers(total)<div></div>
+        </div>
       </div>
     </div>
     <div id="b3">
