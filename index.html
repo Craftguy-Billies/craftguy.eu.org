@@ -23,8 +23,21 @@
         background-color:#fff;
         width:220px;
         padding: 10px 15px 10px;
-        border: 2px double #000;
         margin-bottom:15px;
+        animation-name:border;
+        animation-duration:7s;
+        animation-iteration-count: infinite;
+    }
+    @keyframes border{
+      0% {border: 2px solid #000;}
+      12.5% {border: 2px solid #e33c30;}
+      25% {border: 2px solid #e3b630;}
+      37.5% {border: 2px solid #dde330;}
+      50% {border: 2px solid #39e330;}
+      62.5% {border: 2px solid #30e392;}
+      75% {border: 2px solid #3048e3;}
+      87.5% {border: 2px solid #a130e3;}
+      100% {border: 2px solid #000;}
     }
     .header-words {
         display:inline-block;
@@ -326,13 +339,16 @@ html, body {
 }
 #open-list:checked ~ .down{
   transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
 }
 #open-list:not(:checked) ~ .down{
   transform: rotate(-180deg);
+  -webkit-transform: rotate(-180deg);
 }
 #second{
   height:14vh;
-  line-height:14vh
+  line-height:14vh;
+  transform:scale(1.00);
 }
 #second:hover{
   transform:scale(1.05);
