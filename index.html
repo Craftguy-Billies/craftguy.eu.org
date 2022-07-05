@@ -390,6 +390,7 @@ html, body {
   width:99vw;
   margin-bottom:0;
   font-family: Consolas;
+  opacity: 90%;
 }
 th.bottom-th{
   background-color: #5f6370;
@@ -413,11 +414,21 @@ th.bottom-th a:visited{
   font-size: 3vw;
   font-weight:520;
   text-decoration:none;
-  color:#fff;
   font-family: Consolas;
   padding-left:2.5vw;
   line-height: 5vh;
   padding-bottom:8px;
+  animation-name:funny;
+  animation-duration:5s;
+  animation-iteration-count: infinite;
+}
+@keyframes funny{
+  0% {color:#fff;}
+  20% {color: #fcaba2;}
+  40% {color: #f8fca2;}
+  60% {color: #a2fce7;}
+  80% {color: #eca2fc;}
+  100% {color:#fff;}
 }
 table.fun{
   text-align:center;
