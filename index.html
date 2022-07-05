@@ -13,6 +13,10 @@
     ::selection{
       background-color:#000;
     }
+    @font-face{
+      font-family: Consolas;
+      src: url(font/Consolas.ttf);
+    }
     body{
         background-color:aquamarine;
         margin-top:0;
@@ -64,7 +68,7 @@
     color: #000;
     background-color:bisque;
     font-size: 4.5vw;
-    line-height:5.5vh;
+    height:auto;
     font-family: Consolas;
     border:1.5px solid #000;
     border-radius:7px;
@@ -80,8 +84,7 @@
  }
 
  label{
-    width:100%;
-    min-height: 100%; 
+    width:100%; 
     height: auto; 
     display: inline-block;
  }
@@ -448,6 +451,58 @@ td a:hover{
   cursor:pointer;
   color:#fff;
 }
+.cookieconsent{
+  position:fixed;
+  width:98vw;
+  height:35vh;
+  background-color: #5669c4;
+  bottom:0;
+  border:1.4px solid #000;
+  border-radius:6px;
+  font-family: Consolas;
+  padding-top:1.5vh;
+  padding-left:1.5vw;
+  color:#fff;
+  font-size: 2.89vh;
+}
+label#outer{
+  height:100%;
+  display:table;
+}
+div#accept{
+  width:150px;
+  height:40px;
+  margin-top: 20px;
+  line-height:40px;
+  background-color: #f0f285;
+  text-align:center;
+  color:#131675;
+  font-family: Consolas;
+  font-size: 25px;
+  border: 1.95px solid #000;
+  border-radius:7px;
+  display:table;
+  box-shadow: 1px 4px;
+}
+div#accept label#outer:hover{
+  background-color:#d6d651;
+}
+div#accept label#outer:active{
+  background-color: #bfbf43;
+  transform: translateY(3px);
+}
+a.rjj:visited{
+  color: #fa7a83;
+}
+#byebye:checked ~ .cookieconsent{
+  display:block;
+}
+#byebye:not(:checked) ~ .cookieconsent{
+  display:none;
+}
+#byebye{
+  display:none;
+}
 </style>
 </head>
 <div>
@@ -463,8 +518,8 @@ td a:hover{
   <div class="list">
     <div class="list-opacity"></div>
     <a href="#"><label for="open-list" id="open-peni"><div class="links" style="border-bottom:0.75px solid #272b96;z-index:2;position:relative;box-shadow:none;">Fishing Family&trade;&nbsp;<i class="arrow down"></i></i></div></label></a>
-    <a href="http://note.fishing-family.tk/"><div class="links" id="menu-toggle">NotePad</div></a>
-    <a href="http://time.fishing-family.tk/"><div class="links" id="menu-toggle2">Clock</div></a>
+    <a href="http://music.fishing-family.tk/"><div class="links" id="menu-toggle">Music</div></a>
+    <a href="http://record.fishing-family.tk/"><div class="links" id="menu-toggle2">Records</div></a>
     <a href="https://www.youtube.com/c/Craftguy/"><div id="second" class="links">Craftguy&trade; YouTube</div></a>
  </div>
   <body id="whole"><div class="dark">
@@ -539,11 +594,26 @@ td a:hover{
          Contact information:
       </div>
       <div class="contents">
-         Email: kwantszlong1555@gmail.com<div></div>
-         YouTube: Craftguy (Chinese Channel)<div></div>
-         YouTube: Craftguy (English Channel)<div></div>
-         Instagram: billiez15<div></div>
-         Bilibili: Craftguy
+         <div style="display:flex;">
+          <div><img src="image/gmail.png" width="30px"></div>
+          <div style="line-height:30px;padding-left:8px;">Email: kwantszlong1555@gmail.com</div><div></div>
+        </div>
+        <div style="display:flex;">
+          <div><img src="image/youtube.png" height="30px"></div>
+         <div style="line-height:30px;padding-left:8px;">YouTube: Craftguy (Chinese Channel)<div></div></div>
+        </div>
+        <div style="display:flex;">
+          <div><img src="image/youtube.png" height="30px"></div>
+          <div style="line-height:30px;padding-left:8px;">YouTube: Craftguy (English Channel)<div></div></div>
+         </div>
+         <div style="display:flex;">
+          <div><img src="image/ig.webp" height="30px"></div>
+          <div style="line-height:30px;padding-left:8px;">Instagram: billiez15<div></div></div>
+         </div>
+         <div style="display:flex;">
+          <div><img src="image/bilibili.webp" height="30px"></div>
+          <div style="line-height:30px;padding-left:8px;">Bilibili: Craftguy<div></div></div>
+        </div>
          <div class="button"><span id="mail-link"><a class="email" href="mailto:kwantszlong1555@gmail.com">Email me</a></span></div>
          <div id="blanks"></div>
          <div class="button"><span id="yt-link"><a class="email2" href="https://www.youtube.com/c/Craftguy?sub_confirmation=1/">Subscribe Craftguy to Support Me!</a></span></div>
@@ -566,6 +636,13 @@ td a:hover{
       <div class="copyright">
         Copyright &copy Craftguy&trade; 2022. All rights reserved.
       </div>
+    </div>
+    <input type="checkbox" id="byebye" checked>
+    <div class="cookieconsent">
+      We uses cookies to improve your experience on out site and let you know more about Craftguy&trade;.<div></div>
+      <div>&nbsp;</div>
+      To find out more, please read our updated <a class="rjj" href="#" style="color:#fff;text-decoration:underline;">privacy policy</a> and <a class="rjj" href="#" style="color:#fff;text-decoration:underline;">cookie policy</a>.
+      <div id="accept"><label id="outer" for="byebye">OKAY!</label></div>
     </div>
     <script>$('#radio1').prop('checked',true);
     </script></div>
