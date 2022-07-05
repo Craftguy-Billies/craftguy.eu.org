@@ -10,10 +10,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 <style>
+    ::selection{
+      background-color:#000;
+    }
     body{
         background-color:aquamarine;
         margin-top:0;
-        height:900px;
+        height: 2630px;
         position:relative;
         overflow-x:hidden;
         margin:0px;
@@ -58,6 +61,7 @@
     color: #000;
     background-color:bisque;
     font-size: 4.5vw;
+    line-height:6.5vh;
     font-family: Consolas;
     border:1.5px solid #000;
     border-radius:7px;
@@ -104,7 +108,7 @@
  }
  #b2 {
     width:95%;
-    height:1500px;
+    height:2200px;
     background-color: #ffff94;
     margin-top:10px;
     border: 1.5px double #000;
@@ -117,7 +121,7 @@
  }
  #b3 {
     width:95%;
-    height:1500px;
+    height:2200px;
     background-color: #fca7af;
     margin-top:10px;
     border: 1.5px double #000;
@@ -157,9 +161,14 @@
  }
  a:hover{
    color:#000;
+   cursor:pointer;
  }
  div.button{
    margin-top:2em;
+   display:table;
+ }
+ div.button:active{
+  transform:translateY(3px);
  }
  .email{
    font-size: 40px;
@@ -174,17 +183,18 @@
    background-color: #5b6cde;
  }
  .email:active{
+   transform:translateY(3px);
    background-color:#3344b5;
    box-shadow: 1px 1px #8f8f8f;
  }
  .email2{
-   font-size: 40px;
    font-weight: bold;
    background-color: #ecf783;
    padding:10px 5px;
-   border: 1.9px solid #051b69;
    border-radius: 5px;
    box-shadow: 1px 4px #8f8f8f;
+   font-size:4.2vw;
+   border:1.9px solid #02083d;
  }
  .email2:hover{
    background-color: #cfdb65;
@@ -192,10 +202,7 @@
  .email2:active{
    background-color:#adbd24;
    box-shadow: 1px 1px #8f8f8f;
- }
- .button:active{
    transform:translateY(3px);
-   box-shadow: 1px 1px #bbc752;
  }
  .menu{
    margin-left:auto;
@@ -365,12 +372,66 @@ html, body {
   height:14vh;
   line-height:14vh;
   transform:scale(1.00);
+  border-top:0.75px solid #272b96;
+  border-bottom:1.5px solid #272b96
 }
 #second:hover{
   transform:scale(1.05);
 }
 #second:active{
   transform:scale(1.05);
+}
+.footer{
+  background-color: #5f6370;
+  height:auto;
+  line-height:9vh;
+  position:absolute;
+  bottom:0;
+  width:99vw;
+  margin-bottom:0;
+  font-family: Consolas;
+}
+th.bottom-th{
+  background-color: #5f6370;
+  border:none;
+  box-shadow:none;
+  font-size: 3.5vw;
+  font-weight:normal;
+  color:#fff;
+  text-decoration:underline;
+}
+th.bottom-th:hover{
+  cursor:default;
+}
+th.bottom-th a:link{
+  color:#fff;
+}
+th.bottom-th a:visited{
+  color:#a5d6fa;
+}
+.copyright{
+  font-size: 3vw;
+  font-weight:520;
+  text-decoration:none;
+  color:#fff;
+  font-family: Consolas;
+  padding-left:2.5vw;
+  line-height: 5vh;
+  padding-bottom:8px;
+}
+table.fun{
+  text-align:center;
+  font-size: 3.5vw;
+  line-height:6.5vw;
+  margin-bottom: 7.5px;
+  text-decoration: underline;
+}
+td a{
+  color:#fff;
+}
+td a:hover{
+  cursor:pointer;
+  color:#fff;
 }
 </style>
 </head>
@@ -389,7 +450,7 @@ html, body {
     <a href="#"><label for="open-list" id="open-peni"><div class="links" style="border-bottom:0.75px solid #272b96;z-index:2;position:relative;box-shadow:none;">Fishing Family&trade;&nbsp;<i class="arrow down"></i></i></div></label></a>
     <a href="http://music.fishing-family.tk/"><div class="links" id="menu-toggle">Music</div></a>
     <a href="http://record.fishing-family.tk/"><div class="links" id="menu-toggle2">Records</div></a>
-    <a href="https://www.youtube.com/c/Craftguy/"><div id="second" class="links" style="border-top:0.75px solid #272b96;border-bottom:1.5px solid #272b96">Craftguy&trade; YouTube</div></a>
+    <a href="https://www.youtube.com/c/Craftguy/"><div id="second" class="links">Craftguy&trade; YouTube</div></a>
  </div>
   <body id="whole"><div class="dark">
    <div class="container">
@@ -466,9 +527,27 @@ html, body {
          YouTube: Craftguy (English Channel)<div></div>
          Instagram: billiez15<div></div>
          Bilibili: Craftguy
-         <div class="button"><a class="email" href="mailto:kwantszlong1555@gmail.com">Email me</a></div>
+         <div class="button"><span id="mail-link"><a class="email" href="mailto:kwantszlong1555@gmail.com">Email me</a></span></div>
          <div id="blanks"></div>
-         <div class="button"><a class="email2" href="https://www.youtube.com/c/Craftguy?sub_confirmation=1/" style="font-size:4.2vw;border:1.9px solid #02083d;">Subscribe Craftguy to Support Me!</a></div>
+         <div class="button"><span id="yt-link"><a class="email2" href="https://www.youtube.com/c/Craftguy?sub_confirmation=1/">Subscribe Craftguy to Support Me!</a></span></div>
+      </div>
+    </div>
+    <div class="footer">
+      <table class="bottom-table">
+        <tr>
+          <a class="bottom-stuff"><th class="bottom-th"><a href="https://www.youtube.com/c/Craftguy/">Chinese Channel</a></th></a>
+          <a class="bottom-stuff"><th class="bottom-th"><a href="https://www.youtube.com/c/Craftguy2/">English Channel</a></th></a>
+          <a class="bottom-stuff"><th class="bottom-th"><a href="https://space.bilibili.com/1507548366?spm_id_from=333.1007.0.0/">Bilibili Channel</a></th></a>
+        </tr>
+      </table>
+      <table class="fun">
+        <tr>
+          <td><a href="#">Privacy</a></td>
+          <td><a href="#">Cookie Preferences</a></td>
+        </tr>
+      </table>
+      <div class="copyright">
+        Copyright &copy Craftguy&trade; 2022. All rights reserved.
       </div>
     </div>
     <script>$('#radio1').prop('checked',true);
