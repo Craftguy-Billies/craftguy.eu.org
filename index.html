@@ -57,6 +57,9 @@
     width:100%;
     table-layout: fixed;
  }
+ table.limiter{
+  height: fit-content;
+ }
  th {
     color: #000;
     background-color:bisque;
@@ -75,6 +78,7 @@
    background-color: #99871f;
    transform:translate(1px,1px)
  }
+
  label{
     width:100%;
     min-height: 100%; 
@@ -471,6 +475,7 @@ td a:hover{
     </div>
     <div class="menu"><label for="menu" id="menu-label"><img src="image/menu.png" style="width:80px;margin-top:7px;"></label></div>
     </div>
+    <div class="limiter">
     <table class="category">
         <tr>
             <th><label for="radio1" id="one">About</label></th>
@@ -478,6 +483,7 @@ td a:hover{
             <th><label for="radio3" id="three">Contact Me</label></th>
         </tr>
     </table>
+    </div>
     <input type="radio" id="radio1" name="abc" checked>
     <input type="radio" id="radio2" name="abc">
     <input type="radio" id="radio3" name="abc">
