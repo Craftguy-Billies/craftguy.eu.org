@@ -24,6 +24,25 @@
         overflow-x:hidden;
         margin:0px;
     }
+    ::-webkit-scrollbar{
+      width:2.3vw;
+    }
+    ::-webkit-scrollbar-thumb{
+      background: #f6f78f;
+      border-radius:6px;
+      border: 1.1px solid #151e73;
+    }
+    ::-webkit-scrollbar-thumb:hover{
+      background: #d7d968;
+    }
+    ::-webkit-scrollbar-thumb:active{
+      background: #bdbf4b;
+    }
+    ::-webkit-scrollbar-track{
+      background: #a8e8ff;
+      outline: 1.3px solid #000;
+      box-shadow:inset 2px 2px 3px rgba(120, 130, 137, 0.29);
+    }
     .header{
         display:flex;
         background-color:#fff;
@@ -566,7 +585,7 @@ div#accept{
   width:150px;
   height:40px;
   margin-top: 20px;
-  margin-bottom:8px;
+  margin-bottom:14px;
   line-height:40px;
   background-color: #f0f285;
   text-align:center;
