@@ -81,6 +81,9 @@
  table.limiter{
   height: fit-content;
  }
+ #radio11:checked ~ table tr th{
+  border:1.5px solid #fff;
+}
  th {
     color: #000;
     background-color:bisque;
@@ -626,6 +629,48 @@ a.rjj:visited{
 #byebye{
   display:none;
 }
+.darkmode{
+  font-size: 25px;
+  color: #fff;
+  background-color: #000;
+  border:1.5px solid #fff;
+  font-family: Consolas;
+  text-align:center;
+  line-height:40px;
+  width:260px;
+  margin-top:15px;
+  margin-bottom:10px;
+  border-radius:7px;
+  box-shadow: 1px 5px 3px #43434a;
+}
+.darkmode:hover{
+  cursor:pointer;
+}
+.darkmode:active{
+  transform:translateY(4px);
+  box-shadow: 1px 1px 3px #43434a;
+}
+.darkmodes{
+  background-color:#000;
+}
+#radio10:checked ~ #b1{
+  border: 1.5px solid #fff;
+}
+#radio10:checked ~ #b2{
+  border: 1.5px solid #fff;
+}
+#radio10:checked ~ #b3{
+  border: 1.5px solid #fff;
+}
+button.darkmode label#red{
+  display:inline-block;
+}
+#radio10{
+  display:none;
+}
+#radio11{
+  display:none;
+}
 </style>
 </head>
 <div>
@@ -654,14 +699,16 @@ a.rjj:visited{
     <div class="menu"><label for="menu" id="menu-label"><img src="image/menu.png" style="width:80px;margin-top:7px;"></label></div>
     </div>
     <div class="limiter">
+    <input type="checkbox" id="radio11" aria-labelledby="red">
     <table class="category">
         <tr>
-            <th><label for="radio1" id="one">About</label></th>
-            <th><label for="radio2" id="two">Achievements</label></th>
-            <th><label for="radio3" id="three">Contact Me</label></th>
+            <th class="j" id="lol"><label for="radio1" id="one">About</label></th>
+            <th class="j" id="lal"><label for="radio2" id="two">Achievements</label></th>
+            <th class="j" id="lel"><label for="radio3" id="three">Contact Me</label></th>
         </tr>
     </table>
     </div>
+    <input type="checkbox" id="radio10" aria-labelledby="red">
     <input type="radio" id="radio1" name="abc" checked>
     <input type="radio" id="radio2" name="abc">
     <input type="radio" id="radio3" name="abc">
@@ -749,6 +796,15 @@ a.rjj:visited{
          <div class="button"><span id="yt-link"><a class="email2" href="https://www.youtube.com/c/Craftguy?sub_confirmation=1/">Subscribe Craftguy to Support Me!</a></span></div>
       </div>
     </div>
+    <button class="darkmode" onclick="toggle(this)" id="her"><label id="red" for="radio10">Dark Mode</label></button>
+    <script lang="javascript" type="text/javascript">
+      function toggle(e){
+        let txt = e.innerText;
+        e.innerText = txt == 'Dark Mode' ? 'Disable Dark Mode' : 'Dark Mode';
+        var element = document.body;
+        element.classList.toggle("darkmodes");
+      }
+    </script>
     <div class="footer">
       <table class="bottom-table">
         <tr>
