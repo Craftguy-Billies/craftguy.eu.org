@@ -389,7 +389,6 @@ html, body {
   height:100px;
   opacity:60%;
 }
-
 .links{
   height:14vh;
   width:100%;
@@ -437,6 +436,19 @@ html, body {
   background-color:#3344b5;
   transform: scale(1.05);
 }
+#menu-toggle3{
+ position:absolute;
+ top:100px;
+ background-color:#6668f2
+}
+#menu-toggle3:hover{
+  background-color:#4448c4;
+  transform: scale(1.05);
+}
+#menu-toggle3:active{
+  background-color:#3344b5;
+  transform: scale(1.05);
+}
 #open-list:checked ~ div.list #menu-toggle{
   transform:translateY(14vh);
   transition-duration: 0.4s;
@@ -447,8 +459,13 @@ html, body {
   transition-duration: 0.4s;
   transition-timing-function: ease-in-out;
 }
+#open-list:checked ~ div.list #menu-toggle3{
+  transform:translateY(42vh);
+  transition-duration: 0.4s;
+  transition-timing-function: ease-in-out;
+}
 #open-list:checked ~ div.list #second{
-  transform:translateY(28vh);
+  transform:translateY(42vh);
   transition-duration: 0.4s;
   transition-timing-function: ease-in-out;
 }
@@ -458,6 +475,11 @@ html, body {
   transition-timing-function: ease-in-out;
 }
 #open-list:not(:checked) ~ div.list #menu-toggle2{
+  transform:translateY(0);
+  transition-duration: 0.4s;
+  transition-timing-function: ease-in-out;
+}
+#open-list:not(:checked) ~ div.list #menu-toggle3{
   transform:translateY(0);
   transition-duration: 0.4s;
   transition-timing-function: ease-in-out;
@@ -489,11 +511,11 @@ html, body {
   -webkit-transform: rotate(-180deg);
 }
 #second{
+  position:relative;
   height:14vh;
   line-height:14vh;
-  transform:scale(1.00);
   border-top:0.75px solid #272b96;
-  border-bottom:1.5px solid #272b96
+  border-bottom:1.5px solid #272b96;
 }
 #second:hover{
   transform:scale(1.05);
@@ -613,18 +635,31 @@ a.rjj:visited{
 #byebye:checked ~ .cookieconsent{
   display:block;
   animation-name:fadein;
-  animation-duration: 1.3s;
+  animation-duration: 1.1s;
   animation-timing-function: ease-in-out;
   animation-iteration-count: 1;
 }
 @keyframes fadein{
   from {opacity: 0;
-  display:none;}
+  transform:translateY(50px);}
   to {opacity:opaque;
+  transform:translateY(0);
   display:block;}
 }
 #byebye:not(:checked) ~ .cookieconsent{
-  display:none;
+  animation-name:fadeout;
+  animation-duration:0.5s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+@keyframes fadeout{
+  from{opacity:opaque;
+  transform:translateY(0);
+display:block;}
+  to{opacity:0;
+  transform:translateY(50px);
+  display:none;}
 }
 #byebye{
   display:none;
@@ -688,7 +723,8 @@ button.darkmode label#red{
     <a href="#"><label for="open-list" id="open-peni"><div class="links" style="border-bottom:0.75px solid #272b96;z-index:2;position:relative;box-shadow:none;">Fishing Family&trade;&nbsp;<i class="arrow down"></i></i></div></label></a>
     <a href="http://note.fishing-family.tk/"><div class="links" id="menu-toggle">NotePad</div></a>
     <a href="http://time.fishing-family.tk/"><div class="links" id="menu-toggle2">Clock</div></a>
-    <a href="https://www.youtube.com/c/Craftguy/"><div id="second" class="links">Craftguy&trade; YouTube</div></a>
+    <a href="http://downloads.fishing-family.tk/"><div class="links" id="menu-toggle3">Downloads</div></a>
+    <a href="https://www.youtube.com/c/Craftguy/"><div class="links" id="second">Craftguy&trade; YouTube</div></a>
  </div>
   <body id="whole"><div class="dark">
    <div class="container">
