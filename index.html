@@ -806,12 +806,18 @@ button.darkmode label#red{
   position:relative;
   width:auto;
   color: #000;
+  background-color: #f9fca2;
+  padding:10px;
   font-family: Consolas;
   margin-bottom:14px;
   font-size: 5vw;
   margin-left:3vw;
   font-weight:570;
   border-bottom:5px solid #284fd1;
+  border-top:5px solid #284fd1;
+  border-left: 2px solid #000;
+  border-right: 2px solid #000;
+  border-radius:5px;
   z-index:5;
   animation-name:opener;
   animation-timing-function: ease-in-out;
@@ -858,7 +864,7 @@ button.darkmode label#red{
     </div>
     <div class="menu"><label for="menu" id="menu-label"><img src="image/menu.png" style="width:80px;margin-top:7px;"></label></div>
     </div>
-    <div style="display:flex;"><div class="intro">Craftguy&trade; Productions</div></div>
+    <div style="display:flex;"><div id="laster" style="position:absolute;"></div><div class="intro" id="intra">Craftguy&trade; Productions</div></div>
      <!--image slider start-->
      <div class="slider">
       <div class="slides">
