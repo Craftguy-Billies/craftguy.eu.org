@@ -113,13 +113,13 @@
  label:hover {
     cursor:pointer;
  }
- #radio1 {
+ #radio111 {
     display:none;
  }
- #radio2 {
+ #radio222 {
     display:none;
  }
- #radio3 {
+ #radio333 {
     display:none;
  }
  #b1 {
@@ -167,21 +167,21 @@
     padding-bottom:8vh;
     padding-right:2.5vw;
  }
- #radio1:checked ~ #b1 {
+ #radio111:checked ~ #b1 {
     animation-name:opendoor;
     animation-timing-function: ease-in-out;
     animation-duration: 0.7s;
     animation-iteration-count: 1;
     display:block;
  }
- #radio2:checked ~ #b2 {
+ #radio222:checked ~ #b2 {
     animation-name:opendoor;
     animation-timing-function: ease-in-out;
     animation-duration: 0.7s;
     animation-iteration-count: 1;
     display:block;
  }
- #radio3:checked ~ #b3 {
+ #radio333:checked ~ #b3 {
     animation-name:opendoor;
     animation-timing-function: ease-in-out;
     animation-duration: 0.7s;
@@ -198,21 +198,21 @@
       transform:translateY(0px);
     }
  }
- #radio1:checked ~ #b1 .headings{
+ #radio111:checked ~ #b1 .headings{
     animation-name:movein;
     animation-timing-function: ease-in-out;
     animation-duration: 0.4s;
     animation-iteration-count: 1;
     display:block;
  }
- #radio2:checked ~ #b2 .headings{
+ #radio222:checked ~ #b2 .headings{
     animation-name:movein;
     animation-timing-function: ease-in-out;
     animation-duration: 0.4s;
     animation-iteration-count: 1;
     display:block;
  }
- #radio3:checked ~ #b3 .headings{
+ #radio333:checked ~ #b3 .headings{
     animation-name:movein;
     animation-timing-function: ease-in-out;
     animation-duration: 0.4s;
@@ -227,7 +227,7 @@
     opacity:opaque;
   }
 }
-  #radio1:checked ~ #b1 .contents{
+  #radio111:checked ~ #b1 .contents{
     animation-fill-mode: both;
     animation-name:movein;
     animation-timing-function: ease-in-out;
@@ -235,7 +235,7 @@
     animation-duration: 0.6s;
     animation-iteration-count: 1;
  }
- #radio2:checked ~ #b2 .contents{
+ #radio222:checked ~ #b2 .contents{
     animation-fill-mode: both;
     animation-name:movein;
     animation-timing-function: ease-in-out;
@@ -244,7 +244,7 @@
     animation-iteration-count: 1;
     display:block;
  }
- #radio3:checked ~ #b3 .contents{
+ #radio333:checked ~ #b3 .contents{
     animation-fill-mode: both;
     animation-name:movein;
     animation-timing-function: ease-in-out;
@@ -765,19 +765,19 @@ button.darkmode label#red{
   background: #40D3DC;
 }
 
-#radio111:checked ~ .first{
+#radio1:checked ~ .first{
   margin-left: 0;
 }
 
-#radio222:checked ~ .first{
+#radio2:checked ~ .first{
   margin-left: -20%;
 }
 
-#radio333:checked ~ .first{
+#radio3:checked ~ .first{
   margin-left: -40%;
 }
 
-#radio444:checked ~ .first{
+#radio4:checked ~ .first{
   margin-left: -60%;
 }
 
@@ -787,19 +787,19 @@ button.darkmode label#red{
   margin-right: 40px;
 }
 
-#radio111:checked ~ .navigation-auto .auto-btn1{
+#radio1:checked ~ .navigation-auto .auto-btn1{
   background: #40D3DC;
 }
 
-#radio222:checked ~ .navigation-auto .auto-btn2{
+#radio2:checked ~ .navigation-auto .auto-btn2{
   background: #40D3DC;
 }
 
-#radio333:checked ~ .navigation-auto .auto-btn3{
+#radio3:checked ~ .navigation-auto .auto-btn3{
   background: #40D3DC;
 }
 
-#radio444:checked ~ .navigation-auto .auto-btn4{
+#radio4:checked ~ .navigation-auto .auto-btn4{
   background: #40D3DC;
 }
 .intro{
@@ -871,10 +871,10 @@ button.darkmode label#red{
      <div class="slider">
       <div class="slides">
         <!--radio buttons start-->
-        <input type="radio" name="radio-btn" id="radio111">
-        <input type="radio" name="radio-btn" id="radio222">
-        <input type="radio" name="radio-btn" id="radio333">
-        <input type="radio" name="radio-btn" id="radio444">
+        <input type="radio" name="radio-btn" id="radio1">
+        <input type="radio" name="radio-btn" id="radio2">
+        <input type="radio" name="radio-btn" id="radio3">
+        <input type="radio" name="radio-btn" id="radio4">
         <!--radio buttons end-->
         <!--slide images start-->
         <div class="slide first">
@@ -901,10 +901,10 @@ button.darkmode label#red{
       </div>
       <!--manual navigation start-->
       <div class="navigation-manual">
-        <label for="radio111" class="manual-btn"></label>
-        <label for="radio222" class="manual-btn"></label>
-        <label for="radio333" class="manual-btn"></label>
-        <label for="radio444" class="manual-btn"></label>
+        <label for="radio1" class="manual-btn"></label>
+        <label for="radio2" class="manual-btn"></label>
+        <label for="radio3" class="manual-btn"></label>
+        <label for="radio4" class="manual-btn"></label>
       </div>
       <!--manual navigation end-->
     </div>
@@ -924,16 +924,16 @@ button.darkmode label#red{
     <input type="checkbox" id="radio11" aria-labelledby="red">
     <table class="category">
         <tr>
-            <th class="j" id="lol"><label for="radio1" id="one">About</label></th>
-            <th class="j" id="lal"><label for="radio2" id="two">Achievements</label></th>
-            <th class="j" id="lel"><label for="radio3" id="three">Contact Me</label></th>
+            <th class="j" id="lol"><label for="radio111" id="one">About</label></th>
+            <th class="j" id="lal"><label for="radio222" id="two">Achievements</label></th>
+            <th class="j" id="lel"><label for="radio333" id="three">Contact Me</label></th>
         </tr>
     </table>
     </div>
     <input type="checkbox" id="radio10" aria-labelledby="red">
-    <input type="radio" id="radio1" name="abc" checked>
-    <input type="radio" id="radio2" name="abc">
-    <input type="radio" id="radio3" name="abc">
+    <input type="radio" id="radio111" name="abc" checked>
+    <input type="radio" id="radio222" name="abc">
+    <input type="radio" id="radio333" name="abc">
     <div id="b1">
       <div style="width:100%;height:3vh;"></div>
       <div class="contents" style="width:100%;height:2vh;">&nbsp;</div>
