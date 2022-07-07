@@ -783,6 +783,22 @@ button.darkmode label#red{
 
 /*css for automatic navigation*/
 
+.navigation-auto{
+  position: absolute;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin-top: 246px;
+}
+
+.navigation-auto div{
+  border: 2px solid #40D3DC;
+  padding: 5px;
+  width:3vw;
+  border-radius: 10px;
+  transition: 1s;
+}
+
 .navigation-auto div:not(:last-child){
   margin-right: 40px;
 }
@@ -916,7 +932,7 @@ button.darkmode label#red{
       document.getElementById('radio' + counter).checked = true;
       counter++;
       if(counter > 4){
-        counter = 0;
+        counter = 1;
       }
     }, 5000);
     </script>
