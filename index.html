@@ -122,7 +122,7 @@
  #radio333 {
     display:none;
  }
- #b1 {
+ .try1 {
     width:94%;   
     background-color: #69fcff;
     margin-top:10px;
@@ -137,7 +137,7 @@
     padding-left:2vh;
     padding-right:2.5vw;
  }
- #b2 {
+ .try2 {
     padding-left:2vh;
     width:94%;
     background-color: #ffff94;
@@ -152,7 +152,7 @@
     padding-bottom:4vh;
     padding-right:2.5vw;
  }
- #b3 {
+ .try3 {
     padding-left:2vh;
     width:94%;
     background-color: #fca7af;
@@ -269,11 +269,21 @@
    line-height:25px;
    border-left:2px solid rgba(255,255,255,0.55);
  }
- #b2 .contents{
-  border-left: 2px solid rgba(0,0,132,0.55)
+ .contentsb2{
+   font-size:19px;
+   text-decoration:none;
+   padding-left:10px;
+   line-height:25px;
+   border-left: 2px solid rgba(0,0,132,0.55)
  }
- #b2 .headings{
-  border-left:5px solid rgba(0,0,132,1)
+ .headingsb2{
+   font-family: Consolas;
+   font-size: 30px;
+   text-decoration: underline;
+   padding-left: 15px;
+   padding-top:10px;
+   padding-bottom:15px;
+   border-left:5px solid rgba(0,0,132,1)
  }
  a{
    text-decoration:none;
@@ -740,12 +750,17 @@ button.darkmode label#red{
 
 .next {
     right: -50px;
-    border-radius: 3px 3px 3px 3px
+    border-radius: 3px 3px 3px 3px;
 }
-
+.darknext{
+  background-color:#fff;
+}
+.darkprev{
+  background-color:#fff;
+}
 .prev {
     left: -50px;
-    border-radius: 3px 3px 3px 3px
+    border-radius: 3px 3px 3px 3px;
 }
 .fade{
   animation-name:fade;
@@ -818,7 +833,7 @@ button.darkmode label#red{
   z-index:5;
   animation-name:opener;
   animation-timing-function: ease-in-out;
-  animation-duration: 1s;
+  animation-duration: 0.65s;
   animation-delay: 0.4s;
   animation-iteration-count: 1;
   animation-fill-mode: both;
@@ -835,13 +850,29 @@ button.darkmode label#red{
 }
 @keyframes fade{
   from{
-    opacity:0.6
+    opacity:0.6;
   }
 
   to{
-    opacity:opaque
+    opacity:opaque;
   }
 
+}
+.darkb1{
+  background-color:#000;
+  color:#fff;
+}
+
+.active{
+  background-color: #000;
+  color: #fff;
+  border: 1.5px double #fff;
+}
+.contenter{
+  border-left:2px solid rgba(255,255,255,0.55);
+}
+.headerer{
+  border-left: 5px solid #fff;
 }
 </style>
 </head>
@@ -897,8 +928,8 @@ button.darkmode label#red{
         </div>
       
       
-        <a class="prev" onclick='plusSlides(-1)'>&#10094;</a>
-        <a class="next" onclick='plusSlides(1)'>&#10095;</a>
+        <a class="prev" onclick='plusSlides(-1)' id="prev1">&#10094;</a>
+        <a class="next" onclick='plusSlides(1)' id="next1">&#10095;</a>
       </div>
       <br/>
       
@@ -996,7 +1027,7 @@ resume = () =>{
     <input type="radio" id="radio111" name="abc" checked>
     <input type="radio" id="radio222" name="abc">
     <input type="radio" id="radio333" name="abc">
-    <div id="b1">
+    <div id="b1" class="try1">
       <div style="width:100%;height:3vh;"></div>
       <div class="contents" style="width:100%;height:2vh;">&nbsp;</div>
       <div class="headings">
@@ -1027,13 +1058,13 @@ resume = () =>{
         With a simplified workflow and increased video production efficiency, Craftguy&trade; can certainly brings a better video experience to all audiences in the future.
       </div>
     </div>
-    <div id="b2">
+    <div id="b2" class="try2">
       <div style="width:100%;height:3vh;"></div>
-      <div class="contents" style="width:100%;height:2vh;"></div>
-      <div class="headings">
+      <div class="contentsb2" style="width:100%;height:2vh;" id="part1"></div>
+      <div class="headingsb2" id="part2">
          Major Achievements:
       </div>
-      <div class="contents" style="padding-top:15px;">
+      <div class="contentsb2" style="padding-top:15px;" id="part3">
          -Reached 900k views(Chinese channel)<div></div>
          -Most popular video reached 200k views(Chinese channel)<div></div>
          -Reached 3k subscribers(Chinese channel)<div></div>
@@ -1048,7 +1079,7 @@ resume = () =>{
         </div>
       </div>
     </div>
-    <div id="b3">
+    <div id="b3" class="try3">
       <div style="width:100%;height:3vh;"></div>
       <div class="contents" style="width:100%;height:2vh;"></div>
       <div class="headings">
@@ -1083,10 +1114,33 @@ resume = () =>{
     <button class="darkmode" onclick="toggle(this)" id="her"><label id="red" for="radio10" style="display:inline-block">Dark Mode</label></button>
     <script lang="javascript" type="text/javascript">
       function toggle(e){
+
         let txt = e.innerText;
         e.innerText = txt == 'Dark Mode' ? 'Disable Dark Mode' : 'Dark Mode';
+
         var element = document.body;
         element.classList.toggle("darkmodes");
+        
+        var x = document.getElementById("b1");
+        x.classList.toggle("active");
+        var y = document.getElementById("b2");
+        y.classList.toggle("active");
+        var z = document.getElementById("b3");
+        z.classList.toggle("active");
+
+        var border1 = document.getElementById("part1");
+        var border2 = document.getElementById("part2");
+        var border3 = document.getElementById("part3");
+
+        border1.classList.toggle("contenter");
+        border3.classList.toggle("contenter");
+        border2.classList.toggle("headerer");
+
+        var prev = document.getElementById("prev1");
+        var next = document.getElementById("next1");
+
+        prev.classList.toggle("darkprev");
+        next.classList.toggle("darknext");
       }
     </script>
     <div class="footer">
