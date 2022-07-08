@@ -420,6 +420,9 @@ html, body {
   width:100%;
   height:30px;
 }
+
+/*menu*/
+
 #menu-toggle{
  position:absolute;
  top:100px;
@@ -513,12 +516,41 @@ html, body {
   -webkit-transform: rotate(45deg);
 }
 #open-list:checked ~ .down{
-  transform: rotate(180deg);
-  -webkit-transform: rotate(180deg);
+  animation-delay: 0.2s;
+  animation-duration: 0.6s;
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+  animation-name: rotateaway;
+  animation-timing-function: ease-in-out;
 }
 #open-list:not(:checked) ~ .down{
-  transform: rotate(-180deg);
-  -webkit-transform: rotate(-180deg);
+  animation-delay: 0.2s;
+  animation-duration: 0.6s;
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+  animation-name: rotate;
+  animation-timing-function: ease-in-out;
+}
+@keyframes rotateaway{
+  0%{
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+  }
+  100%{
+    transform: rotate(225deg);
+    -webkit-transform: rotate(225deg);
+  }
+}
+
+@keyframes rotate{
+  0%{
+    transform: rotate(225deg);
+    -webkit-transform: rotate(225deg);
+  }
+  100%{
+    transform: rotate(405deg);
+    -webkit-transform: rotate(405deg);
+  }
 }
 #second{
   position:relative;
@@ -917,12 +949,12 @@ button.darkmode label#red{
       <div class="slideshow-inner">
         <div class="mySlides fade out">
       
-          <img  src='image/1.jpg' style='width: 100%;' alt="sally lightfoot crab"/>
+          <a href="https://youtu.be/Qcvr5ctsZug/" target="_blank"><img src='image/1.jpg' style='width: 100%;' alt="sally lightfoot crab"/></a>
         </div>
       
         <div class="mySlides fade out">
       
-          <img  src='image/2.jpg' style='width: 100%;' alt="fighting nazca boobies"/>
+          <a href="https://youtu.be/I-ugA3iKu20/" target="_blank"><img  src='image/2.jpg' style='width: 100%;' alt="fighting nazca boobies"/></a>
         </div>
       
         <div class="mySlides fade out">
@@ -932,7 +964,7 @@ button.darkmode label#red{
       
         <div class="mySlides fade out">
       
-          <img  src='image/4.jpg' style='width: 100%;' alt="pelican"/>
+          <a href="https://youtu.be/90DC_dfApQc/" target="_blank"><img  src='image/4.jpg' style='width: 100%;' alt="pelican"/></a>
         </div>
         
         </div>
