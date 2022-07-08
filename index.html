@@ -875,6 +875,15 @@ button.darkmode label#red{
 .headerer{
   border-left: 5px solid #fff;
 }
+.darkmodebtn:hover{
+  transition-duration: 0.6s;
+  background-color: #fff;
+  color:#000;
+}
+.darkmodebtn:active{
+  background-color: #fff;
+  color:#000;
+}
 </style>
 </head>
 <div>
@@ -1121,6 +1130,9 @@ resume = () =>{
 
         var element = document.body;
         element.classList.toggle("darkmodes");
+
+        let color = e
+        e.classList.toggle("darkmodebtn");
         
         var x = document.getElementById("b1");
         x.classList.toggle("active");
