@@ -711,96 +711,86 @@ button.darkmode label#red{
 #radio11{
   display:none;
 }
-.slider{
-  width: 100%;
-  border-radius: 10px;
-  overflow: hidden;
-  margin-bottom:15px;
+.slideshow-container {
+    margin-left:10%;
+    max-width: 80%;
+    position: relative;
+    margin-bottom:30vh;
 }
 
-.slides{
-  width: 500%;
-  height: auto;
-  display: flex;
+.mySlides {
+    display: none;
+  height: 400px;
+  border: solid 1px black;
+     
 }
 
-.slides input{
-  display: none;
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: #222428;
+    font-weight: bold;
+    font-size: 30px;
+    transition: .6s ease;
+    border-radius: 0 3px 3px 0
 }
 
-.slide{
-  width: 20%;
-  transition: 1.5s;
+.next {
+    right: -50px;
+    border-radius: 3px 3px 3px 3px
 }
 
-.slide img{
-  width: 100%;
-  height: auto;
+.prev {
+    left: -50px;
+    border-radius: 3px 3px 3px 3px
 }
 
-/*css for manual slide navigation*/
-
-.navigation-manual{
-  position: absolute;
-  width: 100%;
-  margin-top: -40px;
-  display: flex;
-  justify-content: center;
+.prev:hover,
+.next:hover {
+    color: #f2f2f2;
+    background-color: rgba(0, 0, 0, 0.8)
 }
 
-.manual-btn{
-  width:3vw;
-  border: 2px solid #40D3DC;
-  padding: 5px;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: 1s;
+.text {
+    color: #f2f2f2;
+    font-size: 15px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    background-color: #222428
 }
 
-.manual-btn:not(:last-child){
-  margin-right: 40px;
+.numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0
 }
 
-.manual-btn:hover{
-  background: #40D3DC;
+.dot {
+    margin-left:5%;
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color .6s ease
 }
 
-#radio1:checked ~ .first{
-  margin-left: 0;
-}
-
-#radio2:checked ~ .first{
-  margin-left: -20%;
-}
-
-#radio3:checked ~ .first{
-  margin-left: -40%;
-}
-
-#radio4:checked ~ .first{
-  margin-left: -60%;
-}
-
-/*css for automatic navigation*/
-
-.navigation-auto div:not(:last-child){
-  margin-right: 40px;
-}
-
-#radio1:checked ~ .navigation-auto .auto-btn1{
-  background: #40D3DC;
-}
-
-#radio2:checked ~ .navigation-auto .auto-btn2{
-  background: #40D3DC;
-}
-
-#radio3:checked ~ .navigation-auto .auto-btn3{
-  background: #40D3DC;
-}
-
-#radio4:checked ~ .navigation-auto .auto-btn4{
-  background: #40D3DC;
+.active,
+.dot:hover {
+    background-color: #717171
 }
 .intro{
   position:relative;
@@ -868,59 +858,116 @@ button.darkmode label#red{
     <div class="menu"><label for="menu" id="menu-label"><img src="image/menu.png" style="width:80px;margin-top:7px;"></label></div>
     </div>
     <div style="display:flex;"><div id="laster" style="position:absolute;"></div><div class="intro" id="intra">Craftguy&trade; Productions</div></div>
-     <!--image slider start-->
-     <div class="slider">
-      <div class="slides">
-        <!--radio buttons start-->
-        <input type="radio" name="radio-btn" id="radio1">
-        <input type="radio" name="radio-btn" id="radio2">
-        <input type="radio" name="radio-btn" id="radio3">
-        <input type="radio" name="radio-btn" id="radio4">
-        <!--radio buttons end-->
-        <!--slide images start-->
-        <div class="slide first">
-          <a href="https://youtu.be/Qcvr5ctsZug"><img src="image/1.jpg" alt=""></a>
+    <div class="slideshow-container">
+      <div class="slideshow-inner">
+        <div class="mySlides fade">
+      
+          <img  src='image/1.jpg' style='width: 100%;' alt="sally lightfoot crab"/>
         </div>
-        <div class="slide">
-          <a href="https://youtu.be/I-ugA3iKu20"><img src="image/2.jpg" alt=""></a>
+      
+        <div class="mySlides fade">
+      
+          <img  src='image/2.jpg' style='width: 100%;' alt="fighting nazca boobies"/>
         </div>
-        <div class="slide">
-          <img src="image/3.jpg" alt="">
+      
+        <div class="mySlides fade">
+      
+          <img  src='image/3.jpg' style='width: 100%;' alt="otovalo waterfall"/>
         </div>
-        <div class="slide">
-          <a href="https://youtu.be/90DC_dfApQc"><img src="image/4.jpg" alt=""></a>
+      
+        <div class="mySlides fade">
+      
+          <img  src='image/4.jpg' style='width: 100%;' alt="pelican"/>
         </div>
-        <!--slide images end-->
-        <!--automatic navigation start-->
-        <div class="navigation-auto">
-          <div class="auto-btn1"></div>
-          <div class="auto-btn2"></div>
-          <div class="auto-btn3"></div>
-          <div class="auto-btn4"></div>
+        
         </div>
-        <!--automatic navigation end-->
+      
+      
+        <a class="prev" onclick='plusSlides(-1)'>&#10094;</a>
+        <a class="next" onclick='plusSlides(1)'>&#10095;</a>
       </div>
-      <!--manual navigation start-->
-      <div class="navigation-manual">
-        <label for="radio1" class="manual-btn"></label>
-        <label for="radio2" class="manual-btn"></label>
-        <label for="radio3" class="manual-btn"></label>
-        <label for="radio4" class="manual-btn"></label>
+      <br/>
+      
+      
+      <div style='text-align: center;'>
+        <span class="dot" onclick='currentSlide(1)'></span>
+        <span class="dot" onclick='currentSlide(2)'></span>
+        <span class="dot" onclick='currentSlide(3)'></span>
+        <span class="dot" onclick='currentSlide(4)'></span>
       </div>
-      <!--manual navigation end-->
-    </div>
-    <!--image slider end-->
+      
+      </div>
+      <script type="text/javascript">
+        var slideIndex = 1;
 
-    <script type="text/javascript">
-    var counter = 1;
-    setInterval(function(){
-      document.getElementById('radio' + counter).checked = true;
-      counter++;
-      if(counter > 4){
-        counter = 1;
-      }
-    }, 5000);
-    </script>
+var myTimer;
+
+var slideshowContainer;
+
+window.addEventListener("load",function() {
+    showSlides(slideIndex);
+    myTimer = setInterval(function(){plusSlides(1)}, 4000);
+  
+    //COMMENT OUT THE LINE BELOW TO KEEP ARROWS PART OF MOUSEENTER PAUSE/RESUME
+    slideshowContainer = document.getElementsByClassName('slideshow-inner')[0];
+  
+    //UNCOMMENT OUT THE LINE BELOW TO KEEP ARROWS PART OF MOUSEENTER PAUSE/RESUME
+    // slideshowContainer = document.getElementsByClassName('slideshow-container')[0];
+  
+    slideshowContainer.addEventListener('mouseenter', pause)
+    slideshowContainer.addEventListener('mouseleave', resume)
+})
+
+// NEXT AND PREVIOUS CONTROL
+function plusSlides(n){
+  clearInterval(myTimer);
+  if (n < 0){
+    showSlides(slideIndex -= 1);
+  } else {
+   showSlides(slideIndex += 1); 
+  }
+  
+  //COMMENT OUT THE LINES BELOW TO KEEP ARROWS PART OF MOUSEENTER PAUSE/RESUME
+  
+  if (n === -1){
+    myTimer = setInterval(function(){plusSlides(n + 2)}, 4000);
+  } else {
+    myTimer = setInterval(function(){plusSlides(n + 1)}, 4000);
+  }
+}
+
+//Controls the current slide and resets interval if needed
+function currentSlide(n){
+  clearInterval(myTimer);
+  myTimer = setInterval(function(){plusSlides(n + 1)}, 4000);
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n){
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+}
+
+pause = () => {
+  clearInterval(myTimer);
+}
+
+resume = () =>{
+  clearInterval(myTimer);
+  myTimer = setInterval(function(){plusSlides(slideIndex)}, 4000);
+}
+      </script>
     <div class="limiter">
     <input type="checkbox" id="radio11" aria-labelledby="red">
     <table class="category">
