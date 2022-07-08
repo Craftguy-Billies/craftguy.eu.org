@@ -720,7 +720,6 @@ button.darkmode label#red{
 .mySlides {
     display: none;
   height: 44.4vw;
-  border: solid 1px black;
      
 }
 
@@ -748,7 +747,13 @@ button.darkmode label#red{
     left: -50px;
     border-radius: 3px 3px 3px 3px
 }
-
+.fade{
+  animation-name:fade;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+  animation-duration: 0.5s;
+}
 .prev:hover,
 .next:hover {
     color: #f2f2f2;
@@ -828,6 +833,16 @@ button.darkmode label#red{
     opacity:opaque;
   }
 }
+@keyframes fade{
+  from{
+    opacity:0.6
+  }
+
+  to{
+    opacity:opaque
+  }
+
+}
 </style>
 </head>
 <div>
@@ -859,22 +874,22 @@ button.darkmode label#red{
     <div style="display:flex;"><div id="laster" style="position:absolute;"></div><div class="intro" id="intra">Craftguy&trade; Productions</div></div>
     <div class="slideshow-container">
       <div class="slideshow-inner">
-        <div class="mySlides fade">
+        <div class="mySlides fade out">
       
           <img  src='image/1.jpg' style='width: 100%;' alt="sally lightfoot crab"/>
         </div>
       
-        <div class="mySlides fade">
+        <div class="mySlides fade out">
       
           <img  src='image/2.jpg' style='width: 100%;' alt="fighting nazca boobies"/>
         </div>
       
-        <div class="mySlides fade">
+        <div class="mySlides fade out">
       
           <img  src='image/3.jpg' style='width: 100%;' alt="otovalo waterfall"/>
         </div>
       
-        <div class="mySlides fade">
+        <div class="mySlides fade out">
       
           <img  src='image/4.jpg' style='width: 100%;' alt="pelican"/>
         </div>
