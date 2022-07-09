@@ -10,9 +10,21 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 <style>
-    ::selection{
-      background-color:#000;
-    }
+
+  /*basic styles*/
+
+  html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+  ::selection{
+    background-color: #fff;
+    color:#000;
+  }
+  ::-moz-selection{
+    background-color: #fff;
+    color: #000;
+  }
     @font-face{
       font-family: Consolas;
       src: url(font/Consolas.ttf);
@@ -43,6 +55,9 @@
       outline: 1.3px solid #000;
       box-shadow:inset 2px 2px 3px rgba(120, 130, 137, 0.29);
     }
+
+    /*craftguy logo and words*/
+
     .header{
         display:flex;
         background-color:#fff;
@@ -74,6 +89,9 @@
         color:#000;
         font-family:Consolas;
     }
+
+/*tab selection table*/
+
  table {
     width:100%;
     table-layout: fixed;
@@ -122,6 +140,9 @@
  #radio333 {
     display:none;
  }
+
+ /*major content boxes*/ 
+
  .try1 {
     width:91vw;   
     background-color: #69fcff;
@@ -167,6 +188,9 @@
     padding-bottom:8vh;
     padding-right:2.5vw;
  }
+
+ /*content box display animation and trigger*/
+
  #radio111:checked ~ #b1 {
     animation-name:opendoor;
     animation-timing-function: ease-in-out;
@@ -262,6 +286,9 @@
     animation-iteration-count: 1;
     display:block;
  }
+
+ /*font style*/
+
  .headings{
    font-family: Consolas;
    font-size: 30px;
@@ -294,6 +321,8 @@
    padding-bottom:15px;
    border-left:5px solid rgba(0,0,132,1)
  }
+
+
  a{
    text-decoration:none;
    color: #000;
@@ -302,6 +331,9 @@
    color:#000;
    cursor:pointer;
  }
+
+/*button style*/
+
  div.button{
    margin-top:2em;
    display:table;
@@ -343,6 +375,9 @@
    box-shadow: 1px 1px #8f8f8f;
    transform:translateY(3px);
  }
+
+ /*menu*/
+
  .menu{
    margin-left:auto;
    z-index:2000;
@@ -398,10 +433,6 @@
    transition-timing-function: ease-in-out;
    transition-duration:0.6s;
  }
-html, body {
-    max-width: 100%;
-    overflow-x: hidden;
-}
 .list .list-opacity{
   background-color: aquamarine;
   width:100%;
@@ -430,7 +461,7 @@ html, body {
   height:30px;
 }
 
-/*menu*/
+/*menu trigger*/
 
 #menu-toggle{
  position:absolute;
@@ -574,6 +605,9 @@ html, body {
 #second:active{
   transform:scale(1.05);
 }
+
+/*footer*/
+
 .footer{
   background-color: #5f6370;
   height:auto;
@@ -638,11 +672,15 @@ table.fun{
 }
 td a{
   color:#fff;
+  padding:10px;
 }
 td a:hover{
   cursor:pointer;
   color:#fff;
 }
+
+/*cookie consent*/
+
 .cookieconsent{
   position:fixed;
   width:98vw;
@@ -721,6 +759,9 @@ display:block;}
 #byebye{
   display:none;
 }
+
+/*dark mode style*/
+
 .darkmode{
   font-size: 25px;
   color: #fff;
@@ -763,6 +804,9 @@ button.darkmode label#red{
 #radio11{
   display:none;
 }
+
+/*image slideshow*/
+
 .slideshow-container {
     margin-left:10%;
     max-width: 80%;
@@ -853,41 +897,38 @@ button.darkmode label#red{
 .dot:hover {
     background-color: #717171;
 }
+
+/*slideshow heading*/
+
 .intro{
-  position:relative;
-  width:100%;
-  color: #000;
-  background-color: #f9fca2;
-  padding-left:15px;
+  font-size:6vw;
+  color:#000;
+  font-weight:550;
   font-family: Consolas;
-  margin-bottom:14px;
-  margin-right:1vw;
-  font-size: 6vw;
-  padding-top:1vh;
-  padding-bottom:1vh;
-  margin-left:1vw;
-  font-weight:570;
-  border-bottom:5px solid #284fd1;
-  border-top:5px solid #284fd1;
-  border-left: 2px solid #000;
-  border-right: 2px solid #000;
-  border-radius:5px;
-  z-index:5;
-  animation-name:opener;
+  padding-left:1vw;
+  padding-right:1vw;
+  margin-left:2vh;
+  border-bottom: 5px solid #000;
+  margin-bottom:15px;
+  animation-name: introgoin;
   animation-timing-function: ease-in-out;
-  animation-duration: 0.5s;
-  animation-delay: 0.4s;
+  animation-duration: 1s;
   animation-iteration-count: 1;
   animation-fill-mode: both;
+  animation-delay: 0.15s;
 }
-@keyframes opener{
-  from{
-    transform:translateX(-85vw);
-    opacity:30%;
+@keyframes introgoin{
+  0%{
+    color: rgba(0,0,0,0);
+    width:1%;
   }
-  to{
-    transform:translateX(0);
-    opacity:opaque;
+  65%{
+    color: rgba(0,0,0,0);
+    width:78%;
+  }
+  100%{
+    color: #000;
+    width:78%;
   }
 }
 @keyframes fade{
@@ -900,6 +941,9 @@ button.darkmode label#red{
   }
 
 }
+
+/*dark mode styles*/
+
 .darkb1{
   background-color:#000;
   color:#fff;
@@ -925,6 +969,42 @@ button.darkmode label#red{
   background-color: #fff;
   color:#000;
 }
+.darkintro{
+  color: #fff;
+  width:100%;
+  border-bottom: 5px solid #fff;
+  animation-name:darkintrogoin;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 1;
+  animation-delay: 0.15s;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+@keyframes darkintrogoin{
+  0%{
+    color: rgba(0,0,0,0);
+    width:1%;
+  }
+  65%{
+    color: rgba(0,0,0,0);
+    width:78%;
+  }
+  100%{
+    color:#fff;
+    width:78%;
+  }
+}
+
+.thd{
+  background-color: #fff;
+}
+.thd:hover{
+  background-color: rgba(255,255,255,0.8);
+}
+.thd:active{
+  background-color: rgba(255,255,255,0.6);
+}
+
 </style>
 </head>
 <div>
@@ -1078,7 +1158,7 @@ resume = () =>{
     <input type="radio" id="radio111" name="abc" checked>
     <input type="radio" id="radio222" name="abc">
     <input type="radio" id="radio333" name="abc">
-    <div id="b1" class="try1">
+    <div id="b1" class="try1"><p>
       <div style="width:100%;height:3vh;"></div>
       <div class="contents" style="width:100%;height:2vh;">&nbsp;</div>
       <div class="headings">
@@ -1107,9 +1187,9 @@ resume = () =>{
         With AI technology becoming more mature and prevalent, Craftguy&trade; aims to further improve his video quality and post-production workflow by introducing more AI-powered softwares in the video processing work.
         <div>&nbsp;</div>
         With a simplified workflow and increased video production efficiency, Craftguy&trade; can certainly brings a better video experience to all audiences in the future.
-      </div>
+      </div></p>
     </div>
-    <div id="b2" class="try2">
+    <div id="b2" class="try2"><p>
       <div style="width:100%;height:3vh;"></div>
       <div class="contentsb2" style="width:100%;height:2vh;" id="part1"></div>
       <div class="headingsb2" id="part2">
@@ -1128,9 +1208,9 @@ resume = () =>{
           -Reached 1M views(total)<div></div>
          -Reached 5k subscribers(total)<div></div>
         </div>
-      </div>
+      </div></p>
     </div>
-    <div id="b3" class="try3">
+    <div id="b3" class="try3"><p>
       <div style="width:100%;height:3vh;"></div>
       <div class="contents" style="width:100%;height:2vh;"></div>
       <div class="headings">
@@ -1160,9 +1240,9 @@ resume = () =>{
          <div class="button"><span id="mail-link"><a class="email" href="mailto:kwantszlong1555@gmail.com" target="_blank">Email me</a></span></div>
          <div id="blanks"></div>
          <div class="button"><span id="yt-link"><a class="email2" href="https://www.youtube.com/c/Craftguy?sub_confirmation=1/" target="_blank">Subscribe Craftguy to Support Me!</a></span></div>
-      </div>
+      </div></p>
     </div>
-    <button class="darkmode" onclick="toggle(this)" id="her"><label id="red" for="radio10" style="display:inline-block">Dark Mode</label></button>
+    <a href="#" target="_self"><button class="darkmode" onclick="toggle(this)" id="her"><label id="red" for="radio10" style="display:inline-block">Dark Mode</label></button></a>
     <script lang="javascript" type="text/javascript">
       function toggle(e){
 
@@ -1195,6 +1275,18 @@ resume = () =>{
 
         prev.classList.toggle("darkprev");
         next.classList.toggle("darknext");
+
+        var intro = document.getElementById("intra");
+        intro.classList.toggle("darkintro");
+
+        const tablehead1 = document.getElementById("lol");
+        const tablehead2 = document.getElementById("lal");
+        const tablehead3 = document.getElementById("lel");
+
+        tablehead1.classList.toggle("thd");
+        tablehead2.classList.toggle("thd");
+        tablehead3.classList.toggle("thd");
+
       }
     </script>
     <div class="footer">
