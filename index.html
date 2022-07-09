@@ -17,18 +17,22 @@
     max-width: 100%;
     overflow-x: hidden;
 }
+
   ::selection{
     background-color: #fff;
     color:#000;
   }
+
   ::-moz-selection{
     background-color: #fff;
     color: #000;
   }
+
     @font-face{
       font-family: Consolas;
       src: url(font/Consolas.ttf);
     }
+
     body{
         background-color:aquamarine;
         margin-top:0;
@@ -36,20 +40,25 @@
         overflow-x:hidden;
         margin:0px;
     }
+
     ::-webkit-scrollbar{
       width:2.3vw;
     }
+
     ::-webkit-scrollbar-thumb{
       background: #f6f78f;
       border-radius:6px;
       border: 1.1px solid #151e73;
     }
+
     ::-webkit-scrollbar-thumb:hover{
       background: #d7d968;
     }
+
     ::-webkit-scrollbar-thumb:active{
       background: #bdbf4b;
     }
+
     ::-webkit-scrollbar-track{
       background: #a8e8ff;
       outline: 1.3px solid #000;
@@ -68,6 +77,7 @@
         animation-duration:7s;
         animation-iteration-count: infinite;
     }
+
     @keyframes border{
       0% {border: 2px solid #000;}
       12.5% {border: 2px solid #e33c30;}
@@ -79,6 +89,7 @@
       87.5% {border: 2px solid #a130e3;}
       100% {border: 2px solid #000;}
     }
+
     .header-words {
         display:inline-block;
         line-height:65px;
@@ -96,12 +107,15 @@
     width:100%;
     table-layout: fixed;
  }
+
  table.limiter{
   height: fit-content;
  }
+
  #radio11:checked ~ table tr th{
   border:1.5px solid #fff;
 }
+
  th {
     color: #000;
     background-color:bisque;
@@ -112,31 +126,39 @@
     border-radius:7px;
     box-shadow: 1px 1px 3px #9d9da3;
  }
+
  th:hover {
     background-color: #d4b935;
     cursor: pointer;
  }
+
  th:active {
    background-color: #99871f;
    transform:translate(1px,1px)
  }
+
  th#two{
   font-size:4.25vw;
  }
+
  label{
     width:100%; 
     height: auto; 
     display: inline-block;
  }
+
  label:hover {
     cursor:pointer;
  }
+
  #radio111 {
     display:none;
  }
+
  #radio222 {
     display:none;
  }
+
  #radio333 {
     display:none;
  }
@@ -158,6 +180,7 @@
     padding-left:2vh;
     padding-right:2.5vw;
  }
+
  .try2 {
     padding-left:2vh;
     width:91vw;
@@ -173,6 +196,7 @@
     padding-bottom:4vh;
     padding-right:2.5vw;
  }
+
  .try3 {
     padding-left:2vh;
     width:91vw;
@@ -198,6 +222,7 @@
     animation-iteration-count: 1;
     display:block;
  }
+
  #radio222:checked ~ #b2 {
     animation-name:opendoor;
     animation-timing-function: ease-in-out;
@@ -205,6 +230,7 @@
     animation-iteration-count: 1;
     display:block;
  }
+
  #radio333:checked ~ #b3 {
     animation-name:opendoor;
     animation-timing-function: ease-in-out;
@@ -212,6 +238,7 @@
     animation-iteration-count: 1;
     display:block;
  }
+
  @keyframes opendoor{
     0%{
       opacity:0;
@@ -222,6 +249,7 @@
       transform:translateY(0px);
     }
  }
+
  #radio111:checked ~ #b1 .headings{
     animation-name:movein;
     animation-timing-function: ease-in-out;
@@ -229,6 +257,7 @@
     animation-iteration-count: 1;
     display:block;
  }
+
  #radio222:checked ~ #b2 .headings{
     animation-name:movein;
     animation-timing-function: ease-in-out;
@@ -236,6 +265,7 @@
     animation-iteration-count: 1;
     display:block;
  }
+
  #radio333:checked ~ #b3 .headings{
     animation-name:movein;
     animation-timing-function: ease-in-out;
@@ -243,6 +273,7 @@
     animation-iteration-count: 1;
     display:block;
  }
+
  @keyframes movein{
   0%{
     opacity:0;
@@ -251,6 +282,7 @@
     opacity:opaque;
   }
 }
+
   #radio111:checked ~ #b1 .contents{
     animation-fill-mode: both;
     animation-name:movein;
@@ -259,6 +291,7 @@
     animation-duration: 0.6s;
     animation-iteration-count: 1;
  }
+
  #radio222:checked ~ #b2 .contents{
     animation-fill-mode: both;
     animation-name:movein;
@@ -268,6 +301,7 @@
     animation-iteration-count: 1;
     display:block;
  }
+
  #radio222:checked ~ #b2 .contentsb2{
     animation-fill-mode: both;
     animation-name:movein;
@@ -277,6 +311,7 @@
     animation-iteration-count: 1;
     display:block;
  }
+
  #radio333:checked ~ #b3 .contents{
     animation-fill-mode: both;
     animation-name:movein;
@@ -287,7 +322,7 @@
     display:block;
  }
 
- /*font style*/
+ /*headings and contents styles*/
 
  .headings{
    font-family: Consolas;
@@ -298,6 +333,7 @@
    padding-top:10px;
    padding-bottom:15px;
  }
+
  .contents{
    font-size:19px;
    text-decoration:none;
@@ -305,6 +341,7 @@
    line-height:25px;
    border-left:2px solid rgba(255,255,255,0.55);
  }
+
  .contentsb2{
    font-size:19px;
    text-decoration:none;
@@ -312,6 +349,7 @@
    line-height:25px;
    border-left: 2px solid rgba(0,0,132,0.55)
  }
+
  .headingsb2{
    font-family: Consolas;
    font-size: 30px;
@@ -322,11 +360,11 @@
    border-left:5px solid rgba(0,0,132,1)
  }
 
-
  a{
    text-decoration:none;
    color: #000;
  }
+
  a:hover{
    color:#000;
    cursor:pointer;
@@ -338,9 +376,11 @@
    margin-top:2em;
    display:table;
  }
+
  div.button:active{
   transform:translateY(3px);
  }
+
  .email{
    font-size: 40px;
    font-weight: bold;
@@ -350,14 +390,17 @@
    border-radius: 5px;
    box-shadow: 1px 4px #8f8f8f;
  }
+
  .email:hover{
    background-color: #5b6cde;
  }
+
  .email:active{
    transform:translateY(3px);
    background-color:#3344b5;
    box-shadow: 1px 1px #8f8f8f;
  }
+
  .email2{
    font-weight: bold;
    background-color: #ecf783;
@@ -367,9 +410,11 @@
    font-size:4.2vw;
    border:1.9px solid #02083d;
  }
+
  .email2:hover{
    background-color: #cfdb65;
  }
+
  .email2:active{
    background-color:#adbd24;
    box-shadow: 1px 1px #8f8f8f;
@@ -382,12 +427,15 @@
    margin-left:auto;
    z-index:2000;
  }
+
  .container {
    display:flex;
  }
+
  .menu:hover{
    cursor:pointer;
  }
+
  .list{
    position:absolute;
    margin:0px;
@@ -402,43 +450,51 @@
    color:#000;
    box-shadow: 5px 4px 3px #706d7d;
  }
+
  #menu-label{
    background-image: url(image/menu.png);
    z-index:2000;
  }
+
  #menu:checked ~ div.list{
    transform:translateY(-140%);
    transition-delay:0.2s;
    transition-duration: 0.6s;
    transition-timing-function: ease-in-out;
  }
+
  #menu:not(:checked) ~ div.list{
    transform:translateY(0);
    transition-delay:0.2s;
    transition-duration:0.6s;
    transition-timing-function: ease-in-out;
  }
+
  #menu{
    display:none;
  }
+
  #menu:checked ~ div label img{
    transform:rotate(180deg);
    transition-delay:0.2s;
    transition-timing-function: ease-in-out;
    transition-duration:0.6s;
  }
+
  #menu:not(:checked) ~ div label img{
    transform:rotate(-180deg);
    transition-delay:0.2s;
    transition-timing-function: ease-in-out;
    transition-duration:0.6s;
  }
+
 .list .list-opacity{
   background-color: aquamarine;
   width:100%;
   height:100px;
   opacity:60%;
 }
+
 .links{
   height:14vh;
   width:100%;
@@ -448,14 +504,17 @@
   background-color: #3b3eff;
   box-shadow: 5px 4px 3px #706d7d;
 }
+
 .links:hover{
   background-color: #4044c7;
   transform: scale(1.05);
 }
+
 .links:active{
   background-color: #3337b0;
   transform: scale(1.05);
 }
+
 #blanks{
   width:100%;
   height:30px;
@@ -468,93 +527,113 @@
  top:100px;
  background-color:#6668f2
 }
+
 #menu-toggle:hover{
   background-color:#4448c4;
   transform: scale(1.05);
 }
+
 #menu-toggle:active{
   background-color:#3344b5;
   transform: scale(1.05);
 }
+
 #menu-toggle2{
  position:absolute;
  top:100px;
  background-color:#6668f2
 }
+
 #menu-toggle2:hover{
   background-color:#4448c4;
   transform: scale(1.05);
 }
+
 #menu-toggle2:active{
   background-color:#3344b5;
   transform: scale(1.05);
 }
+
 #menu-toggle3{
  position:absolute;
  top:100px;
  background-color:#6668f2
 }
+
 #menu-toggle3:hover{
   background-color:#4448c4;
   transform: scale(1.05);
 }
+
 #menu-toggle3:active{
   background-color:#3344b5;
   transform: scale(1.05);
 }
+
 #open-list:checked ~ div.list #menu-toggle{
   transform:translateY(14vh);
   transition-duration: 0.4s;
   transition-timing-function: ease-in-out;
 }
+
 #open-list:checked ~ div.list #menu-toggle2{
   transform:translateY(28vh);
   transition-duration: 0.4s;
   transition-timing-function: ease-in-out;
 }
+
 #open-list:checked ~ div.list #menu-toggle3{
   transform:translateY(42vh);
   transition-duration: 0.4s;
   transition-timing-function: ease-in-out;
 }
+
 #open-list:checked ~ div.list #second{
   transform:translateY(42vh);
   transition-duration: 0.4s;
   transition-timing-function: ease-in-out;
 }
+
 #open-list:not(:checked) ~ div.list #menu-toggle{
   transform:translateY(0);
   transition-duration: 0.4s;
   transition-timing-function: ease-in-out;
 }
+
 #open-list:not(:checked) ~ div.list #menu-toggle2{
   transform:translateY(0);
   transition-duration: 0.4s;
   transition-timing-function: ease-in-out;
 }
+
 #open-list:not(:checked) ~ div.list #menu-toggle3{
   transform:translateY(0);
   transition-duration: 0.4s;
   transition-timing-function: ease-in-out;
 }
+
 #open-list:not(:checked) ~ div.list #second{
   transform:translateY(0);
   transition-duration: 0.4s;
   transition-timing-function: ease-in-out;
 }
+
 #open-list{
   display:none;
 }
+
 .arrow {
   border: solid black;
   border-width: 0 0.55vh 0.55vh 0;
   display: inline-block;
   padding: 3px;
 }
+
 .down {
   transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
 }
+
 #open-list:checked ~ i{
   animation-delay: 0.2s;
   animation-duration: 0.6s;
@@ -563,6 +642,7 @@
   animation-name: rotateaway;
   animation-timing-function: ease-in-out;
 }
+
 #open-list:not(:checked) ~ i{
   animation-delay: 0.2s;
   animation-duration: 0.6s;
@@ -571,6 +651,7 @@
   animation-name: rotate;
   animation-timing-function: ease-in-out;
 }
+
 @keyframes rotateaway{
   100%{
     transform: rotate(225deg);
@@ -584,6 +665,7 @@
     -webkit-transform: rotate(405deg);
   }
 }
+
 #second{
   position:relative;
   height:14vh;
@@ -591,9 +673,11 @@
   border-top:0.75px solid #272b96;
   border-bottom:1.5px solid #272b96;
 }
+
 #second:hover{
   transform:scale(1.05);
 }
+
 #second:active{
   transform:scale(1.05);
 }
@@ -612,6 +696,7 @@
   border-radius:4px;
   box-shadow: 0 -2px 2px #444445;
 }
+
 th.bottom-th{
   background-color: #5f6370;
   border:none;
@@ -621,20 +706,24 @@ th.bottom-th{
   color:#fff;
   text-decoration:underline;
 }
+
 th.bottom-th:hover{
   cursor:default;
 }
+
 th.bottom-th a:link{
   padding-top:2vh;
   padding-bottom:2vh;
   color:#fff;
 }
+
 th.bottom-th a:visited{
   padding-top:2vh;
   padding-bottom:2vh;
   padding:10px;
   color:#a5d6fa;
 }
+
 .copyright{
   font-size: 3vw;
   font-weight:520;
@@ -647,6 +736,7 @@ th.bottom-th a:visited{
   animation-duration:5s;
   animation-iteration-count: infinite;
 }
+
 @keyframes funny{
   0% {color:#fff;}
   20% {color: #fcaba2;}
@@ -655,6 +745,7 @@ th.bottom-th a:visited{
   80% {color: #eca2fc;}
   100% {color:#fff;}
 }
+
 table.fun{
   text-align:center;
   font-size: 3.5vw;
@@ -662,10 +753,12 @@ table.fun{
   margin-bottom: 7.5px;
   text-decoration: underline;
 }
+
 td a{
   color:#fff;
   padding:10px;
 }
+
 td a:hover{
   cursor:pointer;
   color:#fff;
@@ -688,10 +781,12 @@ td a:hover{
   font-size: 20px;
   box-shadow: 0 -1.5px 2px #9699a8;
 }
+
 label#outer{
   height:100%;
   display:table;
 }
+
 div#accept{
   width:150px;
   height:40px;
@@ -708,16 +803,20 @@ div#accept{
   display:table;
   box-shadow: 1px 4px;
 }
+
 div#accept label#outer:hover{
   background-color:#d6d651;
 }
+
 div#accept label#outer:active{
   background-color: #bfbf43;
   transform: translateY(3px);
 }
+
 a.rjj:visited{
   color: #fa7a83;
 }
+
 #byebye:checked ~ .cookieconsent{
   animation-delay:5s;
   animation-fill-mode: both;
@@ -726,6 +825,7 @@ a.rjj:visited{
   animation-timing-function: ease-in-out;
   animation-iteration-count: 1;
 }
+
 @keyframes fadein{
   from {opacity: 0;
   transform:translateY(22vh);}
@@ -733,6 +833,7 @@ a.rjj:visited{
   transform:translateY(0);
   display:block;}
 }
+
 #byebye:not(:checked) ~ .cookieconsent{
   animation-name:fadeout;
   animation-duration:0.5s;
@@ -740,13 +841,18 @@ a.rjj:visited{
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
 }
+
 @keyframes fadeout{
-  from{opacity:opaque;
-  transform:translateY(0);
-display:block;}
-  to{opacity:0;
-  transform:translateY(22vh);
-  display:none;}
+  from{
+    opacity:opaque;
+    transform:translateY(0);
+    display:block;
+}
+  to{
+    opacity:0;
+    transform:translateY(22vh);
+    display:none;
+  }
 }
 #byebye{
   display:none;
@@ -768,31 +874,40 @@ display:block;}
   border-radius:7px;
   box-shadow: 1px 5px 3px #43434a;
 }
+
 .darkmode:hover{
   cursor:pointer;
 }
+
 .darkmode:active{
   transform:translateY(4px);
   box-shadow: 1px 1px 3px #43434a;
 }
+
 .darkmodes{
   background-color:#000;
 }
+
 #radio10:checked ~ #b1{
   border: 1.5px solid #fff;
 }
+
 #radio10:checked ~ #b2{
   border: 1.5px solid #fff;
 }
+
 #radio10:checked ~ #b3{
   border: 1.5px solid #fff;
 }
+
 button.darkmode label#red{
   display:inline-block;
 }
+
 #radio10{
   display:none;
 }
+
 #radio11{
   display:none;
 }
@@ -830,16 +945,20 @@ button.darkmode label#red{
     right: -8.9vw;
     border-radius: 3px 3px 3px 3px;
 }
+
 .darknext{
   background-color:#fff;
 }
+
 .darkprev{
   background-color:#fff;
 }
+
 .prev {
     left: -8.9vw;
     border-radius: 3px 3px 3px 3px;
 }
+
 .fade{
   animation-name:fade;
   animation-timing-function: ease-in-out;
@@ -847,6 +966,7 @@ button.darkmode label#red{
   animation-fill-mode: both;
   animation-duration: 0.5s;
 }
+
 .prev:hover,
 .next:hover {
     color: #f2f2f2;
@@ -909,6 +1029,7 @@ button.darkmode label#red{
   animation-fill-mode: both;
   animation-delay: 0.15s;
 }
+
 @keyframes introgoin{
   0%{
     color: rgba(0,0,0,0);
@@ -923,6 +1044,7 @@ button.darkmode label#red{
     width:78%;
   }
 }
+
 @keyframes fade{
   from{
     opacity:0.6;
@@ -946,21 +1068,26 @@ button.darkmode label#red{
   color: #fff;
   border: 1.5px double #fff;
 }
+
 .contenter{
   border-left:2px solid rgba(255,255,255,0.55);
 }
+
 .headerer{
   border-left: 5px solid #fff;
 }
+
 .darkmodebtn:hover{
   transition-duration: 0.6s;
   background-color: #fff;
   color:#000;
 }
+
 .darkmodebtn:active{
   background-color: #fff;
   color:#000;
 }
+
 .darkintro{
   color: #fff;
   width:100%;
@@ -972,6 +1099,7 @@ button.darkmode label#red{
   animation-duration: 1s;
   animation-fill-mode: both;
 }
+
 @keyframes darkintrogoin{
   0%{
     color: rgba(0,0,0,0);
@@ -990,15 +1118,20 @@ button.darkmode label#red{
 .thd{
   background-color: #fff;
 }
+
 .thd:hover{
   background-color: rgba(255,255,255,0.8);
 }
+
 .thd:active{
   background-color: rgba(255,255,255,0.6);
 }
 
 </style>
 </head>
+
+<!-- Body Starts -->
+
 <div>
   <input onclick="javascript:uncheckListItems(this);" type="checkbox" id="menu" checked>
   <script lang="javascript" type="text/javascript">
@@ -1009,7 +1142,7 @@ button.darkmode label#red{
       }
   </script>
 
- <! -- Open Menu -->
+ <!-- Open Menu -->
 
   <input type="checkbox" id="open-list">
   <div class="list">
@@ -1022,7 +1155,7 @@ button.darkmode label#red{
  </div>
   <body id="whole"><div class="dark">
 
-<! -- Craftguy Logo -->
+<!-- Craftguy Logo -->
 
    <div class="container">
     <div class="header">
@@ -1032,7 +1165,8 @@ button.darkmode label#red{
     <div class="menu"><label for="menu" id="menu-label"><img src="image/menu.png" style="width:80px;margin-top:7px;" alt="Menu"></label></div>
     </div>
 
-<! -- Image Slider -->
+<!-- Image Slider -->
+
     <div style="display:flex;"><div id="laster" style="position:absolute;"></div><div class="intro" id="intra">Craftguy&trade; Productions</div></div>
     <div class="slideshow-container">
       <div class="slideshow-inner">
@@ -1073,6 +1207,7 @@ button.darkmode label#red{
       </div>
       
       </div>
+
       <script type="text/javascript">
         var slideIndex = 1;
 
@@ -1145,7 +1280,7 @@ resume = () =>{
 }
       </script>
 
- <! -- Tab Selection Table -->
+ <!-- Tab Selection Table -->
 
     <div class="limiter">
     <input type="checkbox" id="radio11" aria-labelledby="red">
@@ -1162,7 +1297,7 @@ resume = () =>{
     <input type="radio" id="radio222" name="abc">
     <input type="radio" id="radio333" name="abc">
 
- <! -- B1 -->
+ <!-- B1 -->
 
     <div id="b1" class="try1"><p>
       <div style="width:100%;height:3vh;"></div>
@@ -1196,7 +1331,7 @@ resume = () =>{
       </div></p>
     </div>
 
- <! -- B2 -->
+ <!-- B2 -->
 
     <div id="b2" class="try2"><p>
       <div style="width:100%;height:3vh;"></div>
@@ -1220,7 +1355,7 @@ resume = () =>{
       </div></p>
     </div>
 
- <! -- B3 -->
+ <!-- B3 -->
 
     <div id="b3" class="try3"><p>
       <div style="width:100%;height:3vh;"></div>
@@ -1255,7 +1390,7 @@ resume = () =>{
       </div></p>
     </div>
 
- <! -- Dark Mode -->
+ <!-- Dark Mode -->
 
     <a href="#" target="_self"><button class="darkmode" onclick="toggle(this)" id="her"><label id="red" for="radio10" style="display:inline-block">Dark Mode</label></button></a>
     <script lang="javascript" type="text/javascript">
@@ -1305,7 +1440,7 @@ resume = () =>{
       }
     </script>
 
- <! -- Footer -->
+ <!-- Footer -->
 
     <div class="footer">
       <table class="bottom-table">
@@ -1326,7 +1461,7 @@ resume = () =>{
       </div>
     </div>
 
- <! -- Cookie Consent -->
+ <!-- Cookie Consent -->
 
     <input type="checkbox" id="byebye" checked>
     <div class="cookieconsent">
@@ -1335,6 +1470,7 @@ resume = () =>{
       To find out more, please read our updated <a class="rjj" href="#" style="color:#fff;text-decoration:underline;">privacy policy</a> and <a class="rjj" href="#" style="color:#fff;text-decoration:underline;">cookie policy</a>.
       <div id="accept"><label id="outer" for="byebye">OKAY!</label></div>
     </div>
+
     <script>$('#radio1').prop('checked',true);
     </script></div>
 </body></div>
