@@ -1073,6 +1073,54 @@ button.darkmode label#red{
 
 /*dark mode styles*/
 
+.darkbtn{
+  background-color: #000;
+  border: 1.5px solid #fff;
+  margin-top:12px;
+  margin-bottom:0px;
+  box-sizing: border-box;
+  width:100%;
+  height:65px;
+  line-height:65px;
+  padding-left:15px;
+  font-family:Consolas;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  background-size: 200% auto;
+  cursor:pointer;
+  box-shadow: 1px 1px 1px rgba(255,255,255,0.6)
+}
+
+.darkbtn ul{
+  list-style-type:none;
+  padding:0;
+}
+
+.col-dark{
+  background-color:rgb(150,150,150);
+  border:1.5px solid #fff;
+  width:100%;
+  max-height:0;
+  overflow:hidden;
+  transition: max-height 0.2s ease-out;
+}
+
+.col-dark ul li{
+  text-align:center;
+  color: #fff;
+  height:59px;
+  width:100%;
+  line-height:59px;
+  padding-left:7.5px;
+  cursor:pointer;
+}
+
+.col-dark ul li:hover{
+  background-color: #fff;
+  color: #000;
+  box-shadow: 1px 1px 1px rgba(167, 164, 164, 0.6);
+  border-radius:4px;
+}
+
 .darkb1{
   background-color:#000;
   color:#fff;
@@ -1140,6 +1188,82 @@ button.darkmode label#red{
 
 .thd:active{
   background-color: rgba(255,255,255,0.6);
+}
+
+.collapsible{
+  margin-top:12px;
+  margin-bottom:0px;
+  box-sizing: border-box;
+  width:100%;
+  height:65px;
+  line-height:65px;
+  padding-left:15px;
+  font-family:Consolas;
+  background-image: linear-gradient(to right, rgb(67, 177, 245),rgb(83, 119, 251));
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  background-size: 200% auto;
+  cursor:pointer;
+  border:1.5px solid #000;
+  box-shadow: 1px 1px 1px rgba(255,255,255,0.6)
+}
+
+.collapsible:hover{
+  background-position:right center;
+}
+
+.collapsible:active{
+  background-image: linear-gradient(to right, rgb(64, 154, 209),rgb(92, 121, 226));
+}
+
+.col-content{
+  background-image: linear-gradient(to right, rgba(143, 238, 225, 0.74), rgba(110, 234, 217, 0.75));
+  width:100%;
+  max-height:0;
+  overflow:hidden;
+  transition: max-height 0.2s ease-out;
+}
+
+#part4 ul{
+  padding:0;
+  list-style-type:none;
+}
+
+.collapsible ul{
+  list-style-type:none;
+  padding:0;
+}
+
+.col-content ul li{
+  color:000;
+  text-align:center;
+  height:59px;
+  width:100%;
+  line-height:59px;
+  padding-left:7.5px;
+  cursor:pointer;
+}
+
+.col-content ul li:hover{
+  background-image: linear-gradient(to right,rgb(108, 223, 108),rgb(94, 214, 94));
+  box-shadow: 1px 1px 1px rgba(167, 164, 164, 0.6);
+  border-radius:4px;
+}
+
+.col-content ul li:active{
+  background-image: linear-gradient(to right,rgb(86, 203, 86),rgb(70, 189, 70));
+  box-shadow: 1px 1px 1px rgba(167,164,164,0.6);
+  border-radius:4px;
+}
+
+.plus{
+  float:right;
+  padding-right:15px;
+}
+
+.fill{
+  width:100%;
+  height:100%;
+  display:inline-block;
 }
 
 </style>
@@ -1446,8 +1570,86 @@ resume = () =>{
           -Reached 1M views(total)<div></div>
          -Reached 5k subscribers(total)<div></div>
         </div>
-      </div></p>
+        <div>&nbsp;</div>
+      </div>
+
+<!-- collapsibles -->
+
+      <div id="part4">
+        <div class="headingsb2" id="part5">
+          Craftguy Videos:
+        </div>
+
+        <ul>
+          <li class="collapsible" id="col-btn1">Most Viewed Videos<strong><span class="plus">+</span></strong></li>
+          <div class="col-content" id="col-con1">
+            <ul>
+              <li><a href="https://www.youtube.com/watch?v=xmz33yxNb_A" target="_blank" class="fill">Paper Bow and Arrow</a></li>
+              <li><a href="https://www.youtube.com/watch?v=Ly-qDVWF6XQ" target="_blank" class="fill">Finger Weapon</a></li>
+              <li><a href="https://www.youtube.com/watch?v=tkkFgRI8COc" target="_blank" class="fill">Paper Crossbow</a></li>
+              <li><a href="https://www.youtube.com/watch?v=lYSaeFDOx_A" target="_blank" class="fill">3 Very Easy Mini Weapons</a></li>
+            </ul>
+          </div>
+
+          <li class="collapsible" id="col-btn2">Paper DIY<strong><span class="plus">+</span></strong></li>
+          <div class="col-content" id="col-con2">
+            <ul>
+              <li><a href="https://www.youtube.com/watch?v=nuQaEipOi5Y" target="_blank" class="fill">Paper Plane Shooter With Trigger</a></li>
+              <li><a href="https://www.youtube.com/watch?v=F5Rv-czGwUA" target="_blank" class="fill">Paper Phone Rack</a></li>
+              <li><a href="https://www.youtube.com/watch?v=VhWo9OjQuGI" target="_blank" class="fill">Paper Boat</a></li>
+              <li><a href="https://www.youtube.com/watch?v=Kqr6zLJoiYo" target="_blank" class="fill">Paper Fidget Spinner</a></li>
+            </ul>
+          </div>
+
+          <li class="collapsible" id="col-btn3">Popsicle Sticks DIY<strong><span class="plus">+</span></strong></li>
+          <div class="col-content" id="col-con3">
+            <ul>
+              <li><a href="https://www.youtube.com/watch?v=3fNkZD_B9Ec" target="_blank" class="fill">Popsicle Stick Flick Knife</a></li>
+              <li><a href="https://www.youtube.com/watch?v=j7_qDgRwLkE" target="_blank" class="fill">Popsicle Stick Boat</a></li>
+            </ul>
+          </div>
+
+          <li class="collapsible" id="col-btn4">Cardboard DIY<strong><span class="plus">+</span></strong></li>
+          <div class="col-content" id="col-con4">
+            <ul>
+              <li><a href="https://www.youtube.com/watch?v=etqP8Epop3s" target="_blank" class="fill">Cardboard Pen Holder</a></li>
+              <li><a href="https://www.youtube.com/watch?v=0JAAdamQzA8" target="_blank" class="fill">Cardboard Password Locker</a></li>
+            </ul>
+          </div>
+
+        </ul>
+      </div>
     </div>
+
+    <script type="text/javascript" lang="javascript">
+      var coll = document.getElementsByClassName("collapsible");
+      var i;
+
+      for(i=0;i<coll.length;i++){
+        coll[i].addEventListener("click",opencol);
+        function opencol(){
+          var content = this.nextElementSibling;
+          var child = this.getElementsByTagName("span")[0];
+          if (child.innerHTML == "+"){
+            child.innerHTML = "-"
+          }
+
+          else{
+            child.innerHTML = "+"
+          }
+
+          console.log(child.innerHTML)
+          if (content.style.maxHeight){
+            content.style.maxHeight = null;
+          }
+
+          else{
+            content.style.maxHeight = content.scrollHeight + "px";
+          }
+        }
+      }
+
+    </script>
 
  <!-- B3 -->
 
@@ -1518,10 +1720,46 @@ resume = () =>{
         var border1 = document.getElementById("part1");
         var border2 = document.getElementById("part2");
         var border3 = document.getElementById("part3");
+        var border5 = document.getElementById("part5");
 
         border1.classList.toggle("contenter");
         border3.classList.toggle("contenter");
         border2.classList.toggle("headerer");
+        border5.classList.toggle("headerer");
+
+        var btn1 = document.getElementById("col-btn1");
+        var btn2 = document.getElementById("col-btn2");
+        var btn3 = document.getElementById("col-btn3");
+        var btn4 = document.getElementById("col-btn4");
+
+        var con1 = document.getElementById("col-con1");
+        var con2 = document.getElementById("col-con2");
+        var con3 = document.getElementById("col-con3");
+        var con4 = document.getElementById("col-con4");
+
+        if(btn1.classList.contains("collapsible")){
+          btn1.classList.replace("collapsible","darkbtn");
+          btn2.classList.replace("collapsible","darkbtn");
+          btn3.classList.replace("collapsible","darkbtn");
+          btn4.classList.replace("collapsible","darkbtn");
+
+          con1.classList.replace("col-content","col-dark");
+          con2.classList.replace("col-content","col-dark");
+          con3.classList.replace("col-content","col-dark");
+          con4.classList.replace("col-content","col-dark");
+        }
+
+        else{
+          btn1.classList.replace("darkbtn","collapsible");
+          btn2.classList.replace("darkbtn","collapsible");
+          btn3.classList.replace("darkbtn","collapsible");
+          btn4.classList.replace("darkbtn","collapsible");
+
+          con1.classList.replace("col-dark","col-content");
+          con2.classList.replace("col-dark","col-content");
+          con3.classList.replace("col-dark","col-content");
+          con4.classList.replace("col-dark","col-content");
+        }
 
         var prev = document.getElementById("prev1");
         var next = document.getElementById("next1");
