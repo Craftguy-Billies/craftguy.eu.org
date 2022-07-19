@@ -341,12 +341,6 @@
   transition: all 0.6s ease-in-out;
 }
 
-.headingb12{
-  transform:translateY(45px);
-  opacity:0.15;
-  transition:all 0.6s ease-in-out;
-}
-
  .gogo{
   transform:translateY(0);
   opacity:1;
@@ -1663,6 +1657,7 @@ resume = () =>{
          -Most popular video reached 200k views(Chinese channel)<div></div>
          -Reached 3k subscribers(Chinese channel)<div></div>
          -Reached 150k views(English channel)<div></div>
+         -Most popular video reached 100k views(English channel)<div></div>
          -Reached 800 subscribers(English channel)<div></div>
          -Reached 150k views(Bilibili channel)<div></div>
          -Reached 600 subscribers(Bilibili channel)<div></div>
@@ -1762,10 +1757,8 @@ resume = () =>{
         let partials = document.querySelector("#headb12");
         let con = document.querySelector("#conb12");    
         let con2 = document.querySelector("#con12");
-        let head = document.querySelector("#head12");
 
         let con2Pos = con2.getBoundingClientRect().top; 
-        let head2Pos = head.getBoundingClientRect().top; 
         let currentPosition = content.getBoundingClientRect().top;
         let conPos = con.getBoundingClientRect().top;
         let headPos = partials.getBoundingClientRect().top;
@@ -1801,14 +1794,6 @@ resume = () =>{
 
         else{
           con2.classList.remove("gogo");
-        }
-
-        if(head2Pos < screenPosition){
-          head.classList.add("gogo");
-        }
-
-        else{
-          head.classList.remove("gogo");
         }
       }
 
