@@ -325,15 +325,27 @@
 .conb12{
   transform:translateY(45px);
   opacity:0;
-  transition:all 0.8s ease-in-out;
-  transition-delay:0.3s;
+  transition:all 0.6s ease-in-out;
+  transition-delay:0.25s;
  }
 
  .headb12{
   transform:translateY(45px);
   opacity:0.15;
-  transition:all 0.8s ease-in-out;
+  transition:all 0.6s ease-in-out;
  }
+
+ .contentb12{
+  transform:translateY(45px);
+  opacity:0;
+  transition: all 0.6s ease-in-out;
+}
+
+.headingb12{
+  transform:translateY(45px);
+  opacity:0.15;
+  transition:all 0.6s ease-in-out;
+}
 
  .gogo{
   transform:translateY(0);
@@ -1303,7 +1315,7 @@ button.darkmode label#red{
 
 .animate{
   opacity:0.2;
-  transform:translatex(70px);
+  transform:translateX(70px);
   transition-delay:0.3s;
   transition:all 0.8s ease-in-out;
 }
@@ -1311,6 +1323,49 @@ button.darkmode label#red{
 .activated{
   transform:translateX(0);
   opacity:1;
+}
+
+/*button animation*/
+
+.scrollin{
+  transform:translateX(40px);
+  opacity:0.1;
+  transition:all 0.5s ease-in-out;
+}
+
+.in{
+  transform:translateX(0);
+  opacity:1;
+}
+
+.darkscroll{
+  transform:scale(0.7);
+  opacity:0.5
+}
+
+.scale{
+  animation-name:big;
+  animation-duration: 0.65s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: both;
+  animation-iteration-count: 1;
+}
+
+@keyframes big{
+  0%{
+    transform:scale(0.7);
+    opacity:0.5;
+  }
+
+  70%{
+    transform:scale(1.1);
+    opacity:1;
+  }
+
+  100%{
+    transform:scale(1);
+    opacity:1;
+  }
 }
 
 </style>
@@ -1561,11 +1616,11 @@ resume = () =>{
       <div style="width:100%;height:3vh;"></div>
       <div class="contents" style="width:100%;height:2vh;">&nbsp;</div>
 
-      <div class="headings">
+      <div class="headings headingb12" id="head12">
         Craftguy&trade; Brief History
       </div>
 
-      <div class="contents" style="padding-top:15px;">
+      <div class="contents contentb12" style="padding-top:15px;" id="con12">
         Craftguy&trade; is a YouTube channel founded in 31st December, 2016. The first upload on Craftguy&trade; was the "How to Make a Very Easy Paper Finger Weapon" video, uploaded in 1st January, 2017. This video symbolizes the official debut of Craftguy&trade;.
         <div>&nbsp;</div>
         The first few videos uploaded in the Craftguy&trade; YouTube channel has no custom thumbnails until Craftguy realizes there wasn't any viewers for his videos. 
@@ -1705,7 +1760,12 @@ resume = () =>{
       function animate(){
         let content = document.querySelector("#holinizationers");  
         let partials = document.querySelector("#headb12");
-        let con = document.querySelector("#conb12");      
+        let con = document.querySelector("#conb12");    
+        let con2 = document.querySelector("#con12");
+        let head = document.querySelector("#head12");
+
+        let con2Pos = con2.getBoundingClientRect().top; 
+        let head2Pos = head.getBoundingClientRect().top; 
         let currentPosition = content.getBoundingClientRect().top;
         let conPos = con.getBoundingClientRect().top;
         let headPos = partials.getBoundingClientRect().top;
@@ -1734,6 +1794,22 @@ resume = () =>{
         else{
           partials.classList.remove("gogo");
         }
+
+        if(con2Pos < screenPosition){
+          con2.classList.add("gogo");
+        }
+
+        else{
+          con2.classList.remove("gogo");
+        }
+
+        if(head2Pos < screenPosition){
+          head.classList.add("gogo");
+        }
+
+        else{
+          head.classList.remove("gogo");
+        }
       }
 
     </script>
@@ -1751,7 +1827,7 @@ resume = () =>{
       <div class="contents" style="padding-top:15px;">
          <div style="display:flex;">
           <a href="mailto:kwantszlong1555@gmail.com"><div><img src="image/gmail.png" width="30px" alt="Gmail Logo"></div></a>
-          <div style="line-height:30px;padding-left:8px;">Email: kwantszlong1555@gmail.com</div><div></div>
+          <div style="line-height:30px;padding-left:8px;">Email: mail@craftguy.eu.org</div><div></div>
         </div>
 
         <div style="display:flex;">
@@ -1774,15 +1850,37 @@ resume = () =>{
           <div style="line-height:30px;padding-left:8px;">Bilibili: Craftguy<div></div></div>
         </div>
 
-         <div class="button"><span id="mail-link"><a class="email" href="mailto:mail@craftguy.eu.org?subject=&body=%0D%0A%0D%0A%0D%0A%0D%0A-Email sent via craftguy.eu.org" target="_blank">Email me</a></span></div>
+         <div class="button scrollin"><span id="mail-link"><a class="email" href="mailto:mail@craftguy.eu.org?subject=&body=%0D%0A%0D%0A%0D%0A%0D%0A-Email sent via craftguy.eu.org" target="_blank">Email me</a></span></div>
          <div id="blanks"></div>
-         <div class="button"><span id="yt-link"><a class="email2" href="https://www.youtube.com/c/Craftguy?sub_confirmation=1/" target="_blank">Subscribe Craftguy to Support Me!</a></span></div>
+         <div class="button scrollin"><span id="yt-link"><a class="email2" href="https://www.youtube.com/c/Craftguy?sub_confirmation=1/" target="_blank">Subscribe Craftguy to Support Me!</a></span></div>
       </div></p>
     </div>
 
+    <script type="text/javascript" lang="javascript">
+      window.addEventListener("scroll",animation)
+      function animation(){
+        let button = document.querySelectorAll(".scrollin");
+        var a;
+
+        for(a=0;a<button.length;a++){
+          let detect = button[a].getBoundingClientRect().top;
+          let screenPosition = window.innerHeight;
+          console.log(button[a].classList)
+          
+          if(detect<screenPosition){
+            button[a].classList.add("in");
+          }
+
+          else{
+            button[a].classList.remove("in");
+          }
+        }
+      }
+    </script>
+
  <!-- Dark Mode -->
 
-    <a href="#" target="_self"><button class="darkmode" onclick="toggle(this)" id="her"><label id="red" for="radio10" style="display:inline-block">Dark Mode</label></button></a>
+    <a href="#" target="_self"><button class="darkmode darkscroll" onclick="toggle(this)" id="her"><label id="red" for="radio10" style="display:inline-block">Dark Mode</label></button></a>
     <script lang="javascript" type="text/javascript">
       function toggle(e){
 
@@ -1869,6 +1967,24 @@ resume = () =>{
 
     </script>
 
+<script type="text/javascript" lang="javascript">
+  window.addEventListener("scroll",animation)
+  function animation(){
+    let darkbtn = document.querySelector(".darkscroll");
+
+      let btnPos = darkbtn.getBoundingClientRect().top;
+      let screenPosition = window.innerHeight;
+      
+      if(btnPos<screenPosition){
+        darkbtn.classList.add("scale");
+      }
+
+      else{
+        darkbtn.classList.remove("scale");
+      }
+    }
+</script>
+
  <!-- Footer -->
 
     <div class="footer">
@@ -1901,7 +2017,10 @@ resume = () =>{
       <div id="accept"><label id="outer" for="byebye">OKAY!</label></div>
     </div>
 
-    <script>$('#radio1').prop('checked',true);
+    <script type="text/javascript" lang="javascript">
+    
+    $('#radio1').prop('checked',true);
+
     </script></div>
 </body></div>
 </html>
