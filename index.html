@@ -265,14 +265,6 @@
     }
  }
 
- #radio111:checked ~ #b1 .headings{
-    animation-name:movein;
-    animation-timing-function: ease-in-out;
-    animation-duration: 0.4s;
-    animation-iteration-count: 1;
-    display:block;
- }
-
  #radio222:checked ~ #b2 .headings{
     animation-name:movein;
     animation-timing-function: ease-in-out;
@@ -297,15 +289,6 @@
     opacity:opaque;
   }
 }
-
-  #radio111:checked ~ #b1 .contents{
-    animation-fill-mode: both;
-    animation-name:movein;
-    animation-timing-function: ease-in-out;
-    animation-delay:0.4s;
-    animation-duration: 0.6s;
-    animation-iteration-count: 1;
- }
 
  #radio222:checked ~ #b2 .contents{
     animation-fill-mode: both;
@@ -335,6 +318,26 @@
     animation-duration: 0.6s;
     animation-iteration-count: 1;
     display:block;
+ }
+
+ /*B1 scroll animation*/
+
+.conb12{
+  transform:translateY(45px);
+  opacity:0;
+  transition:all 0.8s ease-in-out;
+  transition-delay:0.3s;
+ }
+
+ .headb12{
+  transform:translateY(45px);
+  opacity:0.15;
+  transition:all 0.8s ease-in-out;
+ }
+
+ .gogo{
+  transform:translateY(0);
+  opacity:1;
  }
 
  /*headings and contents styles*/
@@ -1106,7 +1109,7 @@ button.darkmode label#red{
 }
 
 .col-dark ul li{
-  font-size:5vw;
+  font-size:32px;
   text-align:center;
   color: #fff;
   height:59px;
@@ -1234,8 +1237,31 @@ button.darkmode label#red{
   padding:0;
 }
 
-.col-content ul li{
+@media only screen and (max-width: 600px){
+  .col-content ul li{
   font-size:5vw;
+  color:000;
+  text-align:center;
+  height:59px;
+  width:100%;
+  line-height:59px;
+  cursor:pointer;
+}
+
+.col-dark ul li{
+  font-size:32px;
+  text-align:center;
+  color: #fff;
+  height:59px;
+  width:100%;
+  line-height:59px;
+  cursor:pointer;
+}
+
+}
+
+.col-content ul li{
+  font-size:32px;
   color:000;
   text-align:center;
   height:59px;
@@ -1273,6 +1299,18 @@ button.darkmode label#red{
 
 #col-btn3 span{
   font-size:25px;
+}
+
+.animate{
+  opacity:0.2;
+  transform:translatex(70px);
+  transition-delay:0.3s;
+  transition:all 0.8s ease-in-out;
+}
+
+.activated{
+  transform:translateX(0);
+  opacity:1;
 }
 
 </style>
@@ -1542,11 +1580,11 @@ resume = () =>{
         <div>&nbsp;</div>
       </div>
 
-      <div class="headings" id="headb12">
+      <div class="headings headb12" id="headb12">
         Craftguy&trade; Current Situation and Future Expectations
       </div>
 
-      <div class="contents" style="padding-top:15px;">
+      <div class="contents conb12" style="padding-top:15px;" id="conb12">
         Craftguy&trade; is currently having a stable views and revenue from his videos.
         <div>&nbsp;</div>
         With AI technology becoming more mature and prevalent, Craftguy&trade; aims to further improve his video quality and post-production workflow by introducing more AI-powered softwares in the video processing work.
@@ -1589,7 +1627,7 @@ resume = () =>{
           Craftguy Videos:
         </div>
 
-        <ul>
+        <ul id="holinizationers" class="animate">
           <li class="collapsible" id="col-btn1">Most Viewed Videos<strong><span class="plus">+</span></strong></li>
           <div class="col-content" id="col-con1">
             <ul>
@@ -1631,6 +1669,9 @@ resume = () =>{
     </div>
 
     <script type="text/javascript" lang="javascript">
+
+      //collapsible
+
       var coll = document.getElementsByClassName("collapsible");
       var i;
 
@@ -1655,6 +1696,43 @@ resume = () =>{
           else{
             content.style.maxHeight = content.scrollHeight + "px";
           }
+        }
+      }
+
+      //scroll animation
+
+      window.addEventListener("scroll",animate)
+      function animate(){
+        let content = document.querySelector("#holinizationers");  
+        let partials = document.querySelector("#headb12");
+        let con = document.querySelector("#conb12");      
+        let currentPosition = content.getBoundingClientRect().top;
+        let conPos = con.getBoundingClientRect().top;
+        let headPos = partials.getBoundingClientRect().top;
+        let screenPosition = window.innerHeight;
+
+        if(currentPosition < screenPosition){
+          content.classList.add("activated");
+        }
+
+        else{
+          content.classList.remove("activated");
+        }
+
+        if(conPos < screenPosition){
+          con.classList.add("gogo");
+        }
+
+        else{
+          con.classList.remove("gogo");
+        }
+
+        if(headPos < screenPosition){
+          partials.classList.add("gogo");
+        }
+
+        else{
+          partials.classList.remove("gogo");
         }
       }
 
