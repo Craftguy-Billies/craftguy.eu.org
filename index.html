@@ -1373,6 +1373,10 @@ button.darkmode label#red{
   margin-top:10px;
 }
 
+.darkcookie{
+  color:#fff;
+}
+
 </style>
 </head>
 
@@ -1903,6 +1907,9 @@ resume = () =>{
 
         var z = document.getElementById("b3");
         z.classList.toggle("active");
+
+        var a = document.getElementById("cookie");
+        a.classList.toggle("darkcookie");
 
         var border1 = document.getElementById("part1");
         var border2 = document.getElementById("part2");
