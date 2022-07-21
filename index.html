@@ -3,6 +3,7 @@
 <title>Craftguy&trade;</title>
 
 <!-- meta tags -->
+
 <meta name="language" content="en"/>
 <meta name="author" content="Craftguy"/>
 <meta name="google" content="nopagereadaloud"/>
@@ -1410,6 +1411,8 @@ button.darkmode label#red{
   color:#fff;
 }
 
+/*hidden stuff*/
+
 h1{
   display:none;
 }
@@ -1423,6 +1426,8 @@ h1{
   height:5px;
 }
 
+/*css ends*/
+
 </style>
 </head>
 
@@ -1433,7 +1438,7 @@ h1{
   //This starts the script then hides it from lesser browsers.
   
   cookie_name = "Craftguy_Cookie";
-  //The cookie name is set as Counter_Cookie. If you're going to put this onto other pages to count them, change this with a new name.
+  //The cookie name is set as Craftguy_Cookie. If you're going to put this onto other pages to count them, change this with a new name.
   
   function doCookie() {
   if(document.cookie)
@@ -1496,7 +1501,7 @@ h1{
   
 </script>
 
-<!-- Body Starts -->
+<!-- HTML Body Starts -->
 
 <div>
   <h1>Craftguy Official - Main Webpage for Craftguy Youtube Channel</h1>
@@ -1914,6 +1919,9 @@ resume = () =>{
     </div>
 
     <script type="text/javascript" lang="javascript">
+
+      //scroll animation
+
       window.addEventListener("scroll",animation)
       function animation(){
         let button = document.querySelectorAll(".scrollin");
@@ -1942,8 +1950,13 @@ resume = () =>{
     <div class="cookie" id="cookie"></div>
 
     <script lang="javascript" type="text/javascript">
+
+      //display visited times
+
       var cookiealert = document.getElementById("cookie");
       cookiealert.innerHTML = "You have been visited this site for " + gettimes() + " !"
+
+      //dark mode programs
 
       function toggle(e){
 
@@ -2034,6 +2047,9 @@ resume = () =>{
     </script>
 
 <script type="text/javascript" lang="javascript">
+
+  //scroll animation
+
   window.addEventListener("scroll",animation)
   function animation(){
     let darkbtn = document.querySelector(".darkscroll");
@@ -2084,4 +2100,7 @@ resume = () =>{
     </div>
     
 </body></div>
+
+<!-- HTML Body Ends -->
+
 </html>
