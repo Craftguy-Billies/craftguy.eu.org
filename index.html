@@ -89,6 +89,11 @@
       src: url(font/Consolas.ttf);
     }
 
+    @font-face{
+      font-family: Chi;
+      src: url(font/DFPing.ttc);
+    }
+
     body{
         background-color:aquamarine;
         margin-top:0;
@@ -659,6 +664,12 @@
   transition-timing-function: ease-in-out;
 }
 
+#open-list:checked ~ div.list #third{
+  transform:translateY(42vh);
+  transition-duration: 0.4s;
+  transition-timing-function: ease-in-out;
+}
+
 #open-list:not(:checked) ~ div.list #menu-toggle{
   transform:translateY(0);
   transition-duration: 0.4s;
@@ -678,6 +689,12 @@
 }
 
 #open-list:not(:checked) ~ div.list #second{
+  transform:translateY(0);
+  transition-duration: 0.4s;
+  transition-timing-function: ease-in-out;
+}
+
+#open-list:not(:checked) ~ div.list #third{
   transform:translateY(0);
   transition-duration: 0.4s;
   transition-timing-function: ease-in-out;
@@ -744,6 +761,22 @@
 }
 
 #second:active{
+  transform:scale(1.05);
+}
+
+#third{
+  position:relative;
+  height:14vh;
+  line-height:14vh;
+  border-top:0.75px solid #272b96;
+  border-bottom:1.5px solid #272b96;
+}
+
+#third:hover{
+  transform:scale(1.05);
+}
+
+#third:active{
   transform:scale(1.05);
 }
 
@@ -1428,6 +1461,10 @@ h1{
   height:5px;
 }
 
+.dfping{
+  font-family:Chi;
+}
+
 /*css ends*/
 
 </style>
@@ -1528,6 +1565,7 @@ h1{
     <a href="http://time.fishing-family.tk/" target="_blank"><div class="links" id="menu-toggle2">Clock</div></a>
     <a href="http://downloads.fishing-family.tk/" target="_blank"><div class="links" id="menu-toggle3">Downloads</div></a>
     <a href="https://www.youtube.com/c/Craftguy/" target="_blank"><div class="links" id="second">Craftguy&trade; YouTube</div></a>
+    <a href="https://craftguy.eu.org/zh/" target="_blank"><div class="links dfping" id="third">中文版網站</div></a>
  </div>
 
   <body id="whole" onload="doCookie()"><div class="dark">
