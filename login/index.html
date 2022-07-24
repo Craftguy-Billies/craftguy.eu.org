@@ -66,10 +66,13 @@ body{
 <div class="count" id="count"></div>
 <input type="button" class="btn" id="pwchange" onclick="changepw()" value="Change Password">
 <input type="button" class="btn" id="logout" onclick="logout()" value="Logout">
+
+<input type="button" class="btn" id="gotomainpage" onclick="gotomainpage()" value="Proceed to Main Page">
+<input type="button" class="btn" id="gotochipage" onclick="gotochipage()" value="Proceed to Chinese Page">
         <script type="text/javascript" lang="javascript">
             //login conditions check
-            var username = sessionStorage.getItem('username')
-            var password = sessionStorage.getItem('password')
+            var username = localStorage.getItem('vername')
+            var password = localStorage.getItem('verpw')
 
             if (password == null){
                 window.location.href="login.html"
@@ -85,7 +88,8 @@ body{
             
 //Logout
 function logout(){
-sessionStorage.clear();
+localStorage.removeItem('vername')
+localStorage.removeItem('verpw')
 window.location.href="login.html"
 }
 
@@ -167,8 +171,15 @@ return ("0 times");
 
 }
 
-//display visited times
-document.getElementById('count').innerHTML = "You have been to this site " + gettimes() + " before."
+//go to craftguy main page
+function gotomainpage(){
+    window.location.href="https://craftguy.eu.org/"
+}
+
+//go to craftguy chi main page
+function gotochipage(){
+    window.location.href="https://craftguy.eu.org/zh/"
+}
 
         </script>
     </body>

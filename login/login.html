@@ -170,6 +170,9 @@ function login(){
     sessionStorage.setItem('username',username)
     sessionStorage.setItem('password',password)
 
+    localStorage.setItem('vername',username)
+    localStorage.setItem('verpw',password)
+
     document.getElementById("user").value = ""
     document.getElementById("pw").value = ""
   }
