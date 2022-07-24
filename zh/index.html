@@ -669,6 +669,12 @@
   transition-timing-function: ease-in-out;
 }
 
+#open-list:checked ~ div.list #loginpage{
+  transform:translateY(42vh);
+  transition-duration: 0.4s;
+  transition-timing-function: ease-in-out;
+}
+
 #open-list:checked ~ div.list #third{
   transform:translateY(42vh);
   transition-duration: 0.4s;
@@ -694,6 +700,12 @@
 }
 
 #open-list:not(:checked) ~ div.list #second{
+  transform:translateY(0);
+  transition-duration: 0.4s;
+  transition-timing-function: ease-in-out;
+}
+
+#open-list:not(:checked) ~ div.list #loginpage{
   transform:translateY(0);
   transition-duration: 0.4s;
   transition-timing-function: ease-in-out;
@@ -754,6 +766,14 @@
 }
 
 #second{
+  position:relative;
+  height:14vh;
+  line-height:14vh;
+  border-top:0.75px solid #272b96;
+  border-bottom:1.5px solid #272b96;
+}
+
+#loginpage{
   position:relative;
   height:14vh;
   line-height:14vh;
