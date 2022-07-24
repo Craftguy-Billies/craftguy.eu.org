@@ -1,0 +1,207 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="theme-color" content="green">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Login Page</title>
+<style>
+  body{
+    background-color: rgb(243, 255, 211);
+    margin:0;
+    padding:0;
+  }
+
+  @font-face{
+    font-family: Consolas;
+    src: url(font/Consolas.ttf);
+  }
+
+  .blank{
+    width:100%;
+    height: 8px;
+  }
+
+  .box{
+    margin-left:10px;
+    width:40vw;
+    border:1px solid #000;
+  }
+
+  form{
+    display:flex;
+  }
+
+ #user{
+    margin-top:10px;
+ }
+
+ .btn{
+    margin-left:10px;
+    margin-top:10px;
+    border:1.5px solid #000;
+    padding:5px;
+    padding-left:10px;
+    padding-right:10px;
+    border-radius:5px;
+    background-color: yellow;
+    font-family: Consolas;
+    font-size: 30px;
+    line-height:30px;
+    text-align:center;
+    cursor:pointer;
+ }
+
+.btn:hover,
+.btn:active{
+  background-color: rgba(162, 180, 61,0.8);
+}
+
+#clear{
+  background-color: rgb(209, 255, 233);
+}
+
+#goreg{
+  background-color:aquamarine;
+  font-size:25px;
+  padding:5px;
+}
+
+#goreg:hover,
+#goreg:active{
+  background-color:rgb(67, 165, 133);
+}
+
+#fpw{
+  background-color: rgb(162, 185, 250);
+}
+
+#fpw:hover,
+#fpw:active{
+  background-color: rgb(98, 124, 194);
+}
+</style>
+</head>
+<body>
+
+  <script type="text/javascript" lang="javascript">
+
+  </script>
+
+  <form>
+<div style="color:#000;font-size:20px;font-family: Consolas;margin-left:10px;">Username:&nbsp;&nbsp;<input type="text" id="user" class="box" value="">
+<div class="blank"></div>
+<div>Password:&nbsp;&nbsp;<input type="text" id="pw" class="box" value=""></div></div>
+</form>
+<input type="button" class="btn" id="btn" onclick="login()" value="Login">
+<input type="button" class="btn" id="goreg" onclick="goreg()" value="Register a new account">
+<input type="button" class="btn" id="fpw" onclick="fpw()" value="Forgot password?">
+
+
+<script type="text/javascript" lang="javascript">
+//login
+var x = JSON.parse(localStorage.getItem('username'))
+var y = JSON.parse(localStorage.getItem('password'))
+
+if (JSON.parse(localStorage.getItem('password')) == null){
+  var usernameArray = [];
+  var passwordArray = [];
+}
+
+else{
+  var usernameArray = JSON.parse(localStorage.getItem('username'))
+  var passwordArray = JSON.parse(localStorage.getItem('password'))
+}
+
+console.log(usernameArray)
+console.log(passwordArray)
+
+function login(){
+
+  event.preventDefault();
+
+  var usernameUntrimmed = document.getElementById("user").value
+  var passwordUntrimmed = document.getElementById("pw").value
+
+  var usernameCap = usernameUntrimmed.trim()
+  var passwordCap = passwordUntrimmed.trim()
+
+  var username = usernameCap.toLowerCase()
+  var password = passwordCap.toLowerCase()
+
+  var i = usernameArray.indexOf(username)
+
+  if (document.getElementById("user").value == ""){
+    alert('Username is required')
+    return;
+  }
+
+  else if (document.getElementById("pw").value == ""){
+    alert('Password is required')
+    return;
+  }
+  
+  else if (username.length < 4){
+    alert('Username should be at least 4 characters long!')
+    document.getElementById("user").value = ""
+    return;
+  }
+
+  else if (password.length < 8){
+    alert('Password should be at least 8 characters long!')
+    document.getElementById("pw").value = ""
+    return;
+  }
+
+  else if(usernameArray.indexOf(username) == -1){
+    alert('Username does not exist')
+    return;
+  }
+
+  else if(passwordArray[i] != password){
+    alert('Wrong password')
+    document.getElementById("pw").value = ""
+  }
+
+  else{
+    alert('Welcome, ' + username)
+    window.location.href="index.html"
+
+    sessionStorage.setItem('username',username)
+    sessionStorage.setItem('password',password)
+
+    document.getElementById("user").value = ""
+    document.getElementById("pw").value = ""
+  }
+
+}
+
+//go registration page
+function goreg(){
+  window.location.href="reg.html"
+}
+
+//login conditions check
+var username = sessionStorage.getItem('username')
+var password = sessionStorage.getItem('password')
+
+if (password == null){
+                
+}
+
+else if (password == undefined){
+                         
+}
+
+else{
+  window.location.href="index.html"
+}
+
+//forgot password
+function fpw(){
+  window.location.href = "passwordrecovery.html"
+}
+
+</script>
+</body>
+</html>
