@@ -59,6 +59,11 @@ body{
     background-color: blue;
 }
 
+@media only screen and (max-width:750px){
+.smaller{
+font-size:4.3vw;
+}
+}
         </style>
     </head>
     <body onload="doCookie()">
@@ -67,8 +72,8 @@ body{
 <input type="button" class="btn" id="pwchange" onclick="changepw()" value="Change Password">
 <input type="button" class="btn" id="logout" onclick="logout()" value="Logout">
 
-<input type="button" class="btn" id="gotomainpage" onclick="gotomainpage()" value="Proceed to Main Page">
-<input type="button" class="btn" id="gotochipage" onclick="gotochipage()" value="Proceed to Chinese Page">
+<input type="button" class="btn smaller" id="gotomainpage" onclick="gotomainpage()" value="Proceed to Main Page">
+<input type="button" class="btn smaller" id="gotochipage" onclick="gotochipage()" value="Proceed to Chinese Page">
         <script type="text/javascript" lang="javascript">
             //login conditions check
             var username = localStorage.getItem('vername')
