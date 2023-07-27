@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta http-equiv="refresh" content="60">
+        <title>DSE Calculator</title>
+        <meta name="description" content="">
+        <meta name="theme-color" content="blue">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <style>
+
+            body{
+                background-color:rgb(191, 217, 235);
+            }
+
+            @font-face{
+                font-family: Consolas;
+                src: url(https://dsecalculator.ml/font/Consolas.ttf);
+            }
+            
+            .hid{
+                display:none;
+            }
+
+            .add{
+                line-height:30px;
+                height:30px;
+                font-size:23px;
+                width:180px;
+                border:1.3px solid #000;
+                text-align:center;
+                cursor:pointer;
+                background-color:rgb(232, 179, 248);
+                border-radius:4px;
+            }
+
+            .add:hover,
+            .add:active{
+                background-color:rgb(212, 123, 212);
+            }
+
+            #adde23{
+                width:210px;
+            }
+
+            .minus{
+                font-size:22px;
+                line-height:15px;
+                height:15px;
+                border:1px solid #000;
+                border-radius:15px;
+                font-weight:bold;
+                cursor:pointer;
+                background-color:rgb(235, 126, 126);
+            }
+
+            .subject{
+                font-size:22px;
+            }
+
+            .header{
+                font-family: Consolas;
+                font-size:28px;
+                font-weight:bold;
+                text-align:center;
+            }
+
+            .blank{
+                display:flex;
+                width:0px;
+                height:auto;
+                display:inline;
+            }
+
+            .weighting{
+                width:50px;
+            }
+
+            #brah{
+                width:300px;
+            }
+
+            input[type="button"]{
+                cursor:pointer;
+                font-size:25px;
+                background-color:aquamarine;
+                border-radius:5px;
+                height:40px;
+                line-height:40px;
+                padding-bottom:17px;
+            }
+
+            input[type="button"]:hover,
+            input[type="button"]:active{
+                background-color:rgb(74, 207, 162);
+            }
+
+            .display{
+                margin-top:20px;
+                border: 1.3px solid #000;
+                font-size: 20px;
+                padding-left: 10px;
+            }
+
+        </style>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        
+        <div class="header">DSE Calculator v1.5</div>
+        <form>
+        <div class="grade">
+            <div id="chi" class="subject">
+                *Chinese:
+                <select id="chi-g" class="select comp main">
+                    <option value="0"></option>
+                    <option value="1">lv 1</option>
+                    <option value="2">lv 2</option>
+                    <option value="3">lv 3</option>
+                    <option value="4">lv 4</option>
+                    <option value="5">lv 5</option>
+                    <option value="6">lv 5*</option>
+                    <option value="7">lv 5**</option>
+                </select>
+                <div class="blank">&nbsp;</div>Weighting:<input type="text" name="weighting" class="weighting">
+            </div><br>
+            <div id="eng" class="subject">
+                *English:
+                <select id="eng-g" class="select comp main">
+                    <option value="0"></option>
+                    <option value="1">lv 1</option>
+                    <option value="2">lv 2</option>
+                    <option value="3">lv 3</option>
+                    <option value="4">lv 4</option>
+                    <option value="5">lv 5</option>
+                    <option value="6">lv 5*</option>
+                    <option value="7">lv 5**</option>
+                </select>
+                <div class="blank">&nbsp;</div>Weighting:<input type="text" name="weighting" class="weighting">
+            </div><br>
+            <div id="maths" class="subject">
+                *Mathematics (Comp):
+                <select id="maths-g" class="select comp main">
+                    <option value="0"></option>
+                    <option value="1">lv 1</option>
+                    <option value="2">lv 2</option>
+                    <option value="3">lv 3</option>
+                    <option value="4">lv 4</option>
+                    <option value="5">lv 5</option>
+                    <option value="6">lv 5*</option>
+                    <option value="7">lv 5**</option>
+                </select>
+                <div class="blank">&nbsp;</div>Weighting:<input type="text" name="weighting" class="weighting">
+            </div><br>
+            <div id="ls" class="subject">
+                *Liberal Studies:
+                <select id="ls-g" class="select comp main">
+                    <option value="0"></option>
+                    <option value="1">lv 1</option>
+                    <option value="2">lv 2</option>
+                    <option value="3">lv 3</option>
+                    <option value="4">lv 4</option>
+                    <option value="5">lv 5</option>
+                    <option value="6">lv 5*</option>
+                    <option value="7">lv 5**</option>
+                </select>
+                <div class="blank">&nbsp;</div>Weighting:<input type="text" name="weighting" class="weighting">
+            </div><br>
+            <div id="e1" class="subject">
+                *Elective 1:
+                <select id="e1-g" class="select comp others">
+                    <option value="0"></option>
+                    <option value="1">lv 1</option>
+                    <option value="2">lv 2</option>
+                    <option value="3">lv 3</option>
+                    <option value="4">lv 4</option>
+                    <option value="5">lv 5</option>
+                    <option value="6">lv 5*</option>
+                    <option value="7">lv 5**</option>
+                </select>
+                <div class="blank">&nbsp;</div>Weighting:<input type="text" name="weighting" class="weighting">
+            </div><br>
+            <div id="e2" class="hid subject">
+                <span class="minus">&nbsp;-&nbsp;</span>&nbsp;&nbsp;Elective 2:
+                <select id="e2-g" class="select others">
+                    <option value="0"></option>
+                    <option value="1">lv 1</option>
+                    <option value="2">lv 2</option>
+                    <option value="3">lv 3</option>
+                    <option value="4">lv 4</option>
+                    <option value="5">lv 5</option>
+                    <option value="6">lv 5*</option>
+                    <option value="7">lv 5**</option>
+                </select>
+                <div class="blank">&nbsp;</div>Weighting:<input type="text" name="weighting" class="weighting">
+            <br><br></div>
+            <div id="e3" class="hid subject">
+                <span class="minus">&nbsp;-&nbsp;</span>&nbsp;&nbsp;Elective 3:
+                <select id="e3-g" class="select others">
+                    <option value="0"></option>
+                    <option value="1">lv 1</option>
+                    <option value="2">lv 2</option>
+                    <option value="3">lv 3</option>
+                    <option value="4">lv 4</option>
+                    <option value="5">lv 5</option>
+                    <option value="6">lv 5*</option>
+                    <option value="7">lv 5**</option>
+                </select>
+                <div class="blank">&nbsp;</div>Weighting:<input type="text" name="weighting" class="weighting">
+            <br><br></div>
+            <div id="m12" class="hid subject">
+                <span class="minus">&nbsp;-&nbsp;</span>&nbsp;&nbsp;Mathematics (Ext. Mod. 1 or 2):
+                <select id="m12-g" class="select others">
+                    <option value="0"></option>
+                    <option value="1">lv 1</option>
+                    <option value="2">lv 2</option>
+                    <option value="3">lv 3</option>
+                    <option value="4">lv 4</option>
+                    <option value="5">lv 5</option>
+                    <option value="6">lv 5*</option>
+                    <option value="7">lv 5**</option>
+                </select>
+                <div class="blank">&nbsp;</div>Weighting:<input type="text" name="weighting" class="weighting">
+            </div>
+            <br><div class="add" id="addm12">+ Add M1/M2</div>
+            <br><div class="add" id="adde23">+ Add An Elective</div>
+            <br><div class="add" id="brah">Convert to 8.5 point scale</div>
+            <br><div class="info">* = Field is required</div>
+            <br><div class="info">Note: Weighting returns 1 when the box is blank.</div>
+            <br><input type="button" name="submit" value="Analyze Your results!" id="submit">
+        </div>
+    </form>
+
+    <div class="display" id="display"></div>
+
+    <script type="text/javascript" lang="javascript">
+        var addm12 = document.getElementById("addm12");
+        var adde23 = document.getElementById("adde23");
+        var scaling = document.getElementById("brah");
+
+        var m12 = document.getElementById("m12");
+        var e2 = document.getElementById("e2");
+        var e3 = document.getElementById("e3");
+
+        addm12.addEventListener("click",function(){
+            m12.style.display = "block";
+        });
+
+        scaling.addEventListener("click",scalingupdown);
+
+        function scalingupdown(){
+            var optionsall = document.getElementsByTagName("option");
+            var w;
+            for(w = 0;w<optionsall.length;w++){
+                if(optionsall[w].value == 5 && optionsall[w].nextElementSibling.value == 6){
+                    optionsall[w].value = 5.5;
+                    optionsall[w].nextElementSibling.value = 7;
+                    optionsall[w].nextElementSibling.nextElementSibling.value = 8.5;
+                    scaling.innerHTML = "Convert to 7 point scale";
+                }
+
+                else if(optionsall[w].value == 5.5 && optionsall[w].nextElementSibling.value == 7){
+                    optionsall[w].value = 5;
+                    optionsall[w].nextElementSibling.value = 6;
+                    optionsall[w].nextElementSibling.nextElementSibling.value = 7;
+                    scaling.innerHTML = "Convert to 8.5 point scale";
+                }
+        }
+
+        for(var uu=0;uu<optionsall.length;uu++){
+            console.log(optionsall[uu].value);
+        }
+    }
+
+        adde23.addEventListener("click",adde2e3);
+        function adde2e3(){
+            if (e2.style.display == "block"){
+                e3.style.display = "block";
+            }
+            else{
+                e2.style.display = "block";
+            }
+        }
+
+        var minus = document.getElementsByClassName("minus");
+        for (var i=0;i<minus.length;i++){
+            minus[i].addEventListener("click",hide);
+            function hide(){
+                this.parentNode.style.display = "none";
+                this.nextElementSibling.options.selectedIndex = 0;
+                this.nextElementSibling.nextElementSibling.nextElementSibling.value = "";
+            }
+        }
+
+        var submit = document.getElementById("submit");
+        var arr = [];
+        submit.addEventListener("click",analyse);
+        function analyse(){
+            var comp = document.getElementsByClassName("comp");
+            var y = 0;
+            for(var g=0;g<comp.length;g++){
+                if(comp[g].options.selectedIndex == 0){
+                    alert("Please fill in all required fields!");
+                    comp[g].style.border = "1.3px solid red";
+                    break;
+                }
+
+                else{
+                    comp[g].style.border = "1.3px solid #000";
+                }
+                y++;
+            }
+            if(y>4){
+            continueWork();
+            }
+        }
+
+        function continueWork(){
+            if (arr != []){
+                var arr = [];
+            }
+
+            var others = [];
+            var comp = [];
+
+            var select = document.getElementsByClassName("select");
+            for (var j=0;j<select.length;j++){
+                var score = select[j].options;
+                for (var o=0;o<score.length;o++){
+                    var opt = score.item(o);
+                    if(opt.selected){
+                        arr.push(opt.value);
+                        continue;
+                    }
+                    continue;
+                }
+            }
+
+            var main = document.getElementsByClassName("main");
+            for (var j=0;j<main.length;j++){
+                var mainsub = main[j].options;
+                for(var l=0;l<mainsub.length;l++){
+                    var lol = mainsub.item(l);
+                    if(lol.selected){
+                        comp.push(lol.value);
+                        continue;
+                    }
+                    continue;
+                }
+            }
+
+            var othersub = document.getElementsByClassName("others");
+            for (var m=0;m<othersub.length;m++){
+                var othersubs = othersub[m].options;
+                for (var k=0;k<othersubs.length;k++){
+                    var lel = othersubs.item(k);
+                    if(lel.selected){
+                        others.push(lel.value);
+                        continue;
+                    }
+                    continue;
+                }
+            }
+
+            console.log(others);
+
+            var maincor = comp.map(str => {
+                return Number(str);
+            });
+
+            var mainweighted = maincor.map(str => {
+                return Number(str);
+            });
+
+            var arrcor = arr.map(str => {
+                return Number(str);
+            });
+
+            var otherscor = others.map(str => {
+                return Number(str);
+            });
+
+            var weighting = document.getElementsByClassName("weighting");
+            for(var a=0;a<weighting.length;a++){
+                console.log(weighting[a].value);
+                if(weighting[a].value > 0 && weighting[a].value <= 10){
+                    console.log("added");
+                    console.log(arrcor[a]);
+                    console.log(weighting[a].value);
+                    arrcor[a] = arrcor[a] * weighting[a].value;
+                    weighting[a].style.border = "1.3px solid #000";
+                    continue;
+                }
+
+                else if(weighting[a].value == 0){
+                    weighting[a].style.border = "1.3px solid blue";
+                    weighting[a].value = 1;
+                    continue;
+                }
+
+                else if(weighting[a].value < 0 || weighting[a].value > 10){
+                    weighting[a].style.border = "1.3px solid red";
+                    continue;
+                }
+
+                else{
+                    weighting[a].style.border = "1.3px solid red";
+                    weighting[a].value = 1;
+                    continue;
+                }
+            }
+
+            for(var x=0;x<main.length;x++){
+                if(main[x].options.selectedIndex != 0){
+                    var m = main[x].nextElementSibling.nextElementSibling.value;
+                    if(m > 0 && m <= 10){
+                        mainweighted[x] = mainweighted[x] * m;
+                        continue;
+                    }
+                }
+            }
+
+            for(var op=0,oj=0;op<mainweighted.length;op++){
+                oj = oj + mainweighted[op];
+            }
+
+            console.log(oj);
+
+            console.log(arrcor);
+            console.log(maincor);
+            console.log(otherscor);
+        
+        arrcor.sort(function(a,b){return b-a});
+        arr.sort(function(a,b){return b-a});
+
+        var othersweighted = otherscor.map(str => {
+                return Number(str);
+            });
+
+            otherscor.sort(function(a,b){return b-a});
+
+            console.log(othersweighted);
+
+        for(var q=0;q<othersub.length;q++){
+                if(othersub[q].options.selectedIndex != 0){
+                    var u = othersub[q].nextElementSibling.nextElementSibling.value;
+                    console.log(u);
+                    if(u > 0 && u <= 10){
+                        othersweighted[q] = othersweighted[q] * u;
+                        console.log(othersweighted[q]);
+                        continue;
+                    }
+                }
+            }
+
+            othersweighted.sort(function(a,b){return b-a});
+
+            console.log(othersweighted,mainweighted);
+
+            comp1xweightedcor = othersweighted.slice(0,1);
+            comp2xweightedcor = othersweighted.slice(0,2);
+
+            console.log(comp1xweightedcor,comp2xweightedcor);
+
+            var best5 = arr.slice(0,5);
+            var best6 = arr.slice(0,6);
+
+            var best5weighted = arrcor.slice(0,5);
+            var best6weighted = arrcor.slice(0,6);
+
+            var a = otherscor.slice(0,1);
+            var b = otherscor.slice(0,2);
+
+            console.log(a,b);
+
+            console.log(best5weighted,best6weighted);
+
+            var best5cor = best5.map(str => {
+                return Number(str);
+            });
+
+            var best6cor = best6.map(str => {
+                return Number(str);
+            });
+
+            var compcor = comp.map(str => {
+                return Number(str);
+            });
+
+            console.log(best5cor,best6cor);
+
+            var result5 = 0;
+            var result6 = 0;
+
+            var result5weighted = 0;
+            var result6weighted = 0;
+
+            var comp1x = 0;
+            var comp2x = 0;
+
+            var comp1xweighted = 0;
+            var comp2xweighted = 0;
+
+            for (var c=0;c<best5cor.length;c++){
+                result5 = result5 + best5cor[c];
+            }
+            console.log(result5);
+
+            for (var d=0;d<best6cor.length;d++){
+                result6 = result6 + best6cor[d];
+            }
+            console.log(result6);
+
+            for(var e=0;e<best5weighted.length;e++){
+                result5weighted = result5weighted + best5weighted[e];
+            }
+            console.log(result5weighted);
+
+            for(var f=0;f<best6weighted.length;f++){
+                result6weighted = result6weighted + best6weighted[f];
+            }
+            console.log(result6weighted);
+
+            for(var t=0;t<a.length;t++){
+                comp1x = comp1x + a[t];
+            }
+            
+            for(var y=0;y<b.length;y++){
+                comp2x = comp2x + b[y];
+            }
+
+            console.log(comp1x,comp2x);
+
+            for(var z=0;z<compcor.length;z++){
+                comp1x = comp1x + compcor[z];
+                comp2x = comp2x + compcor[z];
+            }
+
+            for(var ok=0;ok<comp1xweightedcor.length;ok++){
+                comp1xweighted = comp1xweighted + comp1xweightedcor[ok];
+            }
+
+            console.log(comp1xweighted);
+
+            for(var oked=0;oked<comp2xweightedcor.length;oked++){
+                comp2xweighted = comp2xweighted + comp2xweightedcor[oked];
+            }
+
+            comp2xweighted = comp2xweighted + oj;
+            comp1xweighted = comp1xweighted + oj;
+
+            console.log(comp1xweighted,comp2xweighted);
+
+            console.log(comp1x,comp2x);
+
+            var display = document.getElementById("display");
+            display.innerHTML = "Best 5: " + result5 + "<br>" + "Best 6: " + result6 + "<br><br>" + "Best 5 (Weighted): " + result5weighted + "<br>" + "Best 6 (Weighted): " + result6weighted + "<br><br>" + "4C+1X: " + comp1x + "<br>" + "4C+2X: " + comp2x + "<br><br>" + "4C+1X (Weighted): " + comp1xweighted + "<br>" + "4C+2X (Weighted): " + comp2xweighted;
+        }
+        
+    </script>
+    </body>
+</html>
