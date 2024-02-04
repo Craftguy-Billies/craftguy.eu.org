@@ -39,7 +39,7 @@ function count_consistency(){
             }
             return sum_of_reciprocals(w_sum, days, current, index + 1);
         } else {
-            return w_sum / (days - 1);
+            return w_sum / days;
         }
     }
 
