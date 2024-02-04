@@ -31,7 +31,7 @@ function count_consistency(){
 
     function sum_of_reciprocals(w_sum, days, current, index) {
         if (index < days) {
-            if (index !== 0){
+            if (index !== days - 1){
                 w_sum += c_array[current] / (index + 1);
             }
             return sum_of_reciprocals(w_sum, days, current, index + 1);
