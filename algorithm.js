@@ -1,9 +1,12 @@
 function count_consistency(){
     var arr = []
     for(var i=0;i<5;i++){
-        var points = document.getElementsByClassName("points")[i].value;
-        if(points.trim() !== "" && typeof Number(points.trim()) === "number"){
-            arr.push(Number(points))
+        var pts = document.getElementsByClassName("points")[i].value;
+        if(pts.trim() !== "" && typeof Number(pts.trim()) === "number"){
+            var points = Number(pts.trim());
+            if(points % 10 === 0 && points <= 40){
+                arr.push(points);
+            }
         }
     }
 
