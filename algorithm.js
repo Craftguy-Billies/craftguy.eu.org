@@ -10,9 +10,10 @@ function count_consistency(){
         }
     }
 
-    if(arr.length == 0){
+    if(arr.length < 2){
         for(var i=0;i<5;i++){
             document.getElementsByClassName("points")[i].style.border = "1px solid red";
+            return;
         }
     }
     else{
