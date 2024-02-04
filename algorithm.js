@@ -4,7 +4,7 @@ function count_consistency(){
         var pts = document.getElementsByClassName("points")[i].value;
         if(pts.trim() !== "" && typeof Number(pts.trim()) === "number"){
             var points = Number(pts.trim());
-            if(points % 10 === 0 && points <= 40){
+            if(points >= 0 && points <= 40){
                 arr.push(points / 40);
             }
         }
@@ -31,7 +31,9 @@ function count_consistency(){
 
     function sum_of_reciprocals(w_sum, days, current, index) {
         if (index < days) {
-            w_sum += c_array[current] / (index + 1);
+            if (index !== 0){
+                w_sum += c_array[current] / (index + 1);
+            }
             return sum_of_reciprocals(w_sum, days, current, index + 1);
         } else {
             return w_sum / days;
