@@ -12,7 +12,12 @@ function count_consistency(){
 
     if(arr.length == 0){
         for(var i=0;i<5;i++){
-            document.getElementsByClassName("points")[i].style.border = "red 1px solid";
+            document.getElementsByClassName("points")[i].style.border = "1px solid red";
+        }
+    }
+    else{
+        for(var i=0;i<5;i++){
+            document.getElementsByClassName("points")[i].style.border = "1px solid black";
         }
     }
 
@@ -36,5 +41,8 @@ function count_consistency(){
     document.getElementById("consistency").innerHTML = Math.round(sum * 1000) / 10 + "%";
     if(sum < 0.5){
         document.getElementById("consistency").style.color = "red";
+    }
+    else{
+        document.getElementById("consistency").style.color = "black";
     }
 }
