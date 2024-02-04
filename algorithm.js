@@ -5,8 +5,14 @@ function count_consistency(){
         if(pts.trim() !== "" && typeof Number(pts.trim()) === "number"){
             var points = Number(pts.trim());
             if(points % 10 === 0 && points <= 40){
-                arr.push(points);
+                arr.push(points / 40);
             }
+        }
+    }
+
+    if(arr === []){
+        for(var i=0;i<5;i++){
+            document.getElementsByClassName("points")[i].style.border = "red";
         }
     }
 
