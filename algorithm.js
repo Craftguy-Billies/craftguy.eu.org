@@ -31,12 +31,15 @@ function count_consistency(){
 
     function sum_of_reciprocals(w_sum, days, current, index) {
         if (index < days) {
-            if (index !== days - 1){
+            if (current === 0 && index + 1 < days){
+                w_sum += c_array[current] / (index + 2);
+            }
+            else{
                 w_sum += c_array[current] / (index + 1);
             }
             return sum_of_reciprocals(w_sum, days, current, index + 1);
         } else {
-            return w_sum / days;
+            return w_sum / (days - 1);
         }
     }
 
