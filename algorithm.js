@@ -33,7 +33,7 @@ function count_consistency(){
         }
     }
 
-    document.getElementById("consistency").innerHTML = sum.toFixed(3)*100 + "%";
+    document.getElementById("consistency").innerHTML = Math.round(sum * 1000) / 10 + "%";
     if(sum < 0.5){
         document.getElementById("consistency").style.color = "red";
     }
