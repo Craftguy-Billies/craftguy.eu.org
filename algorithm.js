@@ -10,7 +10,7 @@ function count_consistency(){
         }
     }
 
-    if(arr === []){
+    if(arr.length == 0){
         for(var i=0;i<5;i++){
             document.getElementsByClassName("points")[i].style.border = "red";
         }
@@ -33,5 +33,8 @@ function count_consistency(){
         }
     }
 
-    document.getElementById("consistency").innerHTML = sum;
+    document.getElementById("consistency").innerHTML = sum.toFixed(3)*100 + "%";
+    if(sum < 0.5){
+        document.getElementById("consistency").style.color = "red";
+    }
 }
