@@ -47,7 +47,7 @@ function count_consistency(){
     }
 
     document.getElementById("consistency").innerHTML = Math.round(sum * 1000) / 10 + "%";
-    if(sum < 0.5){
+    if(sum < 0.6){
         document.getElementById("consistency").style.color = "red";
     }
     else{
