@@ -1,11 +1,20 @@
 function count_consistency(){
+    var threshold = document.getElementById("threshold").value;
+    if(Number(threshold.trim()) !== "" && typeof Number(threshold.trim()) === "number"){
+        t_v = Number(threshold.trim());
+    } else{
+        t_v = 40
+    }
     var arr = []
     for(var i=0;i<5;i++){
         var pts = document.getElementsByClassName("points")[i].value;
         if(pts.trim() !== "" && typeof Number(pts.trim()) === "number"){
             var points = Number(pts.trim());
             if(points >= 0 && points <= 40){
-                arr.push(points / 40);
+                if(points > t_v){
+                    points = t_v;
+                }
+                arr.push(points / t_v);
             }
         }
     }
