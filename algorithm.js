@@ -2,12 +2,14 @@ function count_consistency(){
     var threshold = document.getElementById("threshold").value;
     var t_v = 40;
     if (threshold.trim() !== "" && !isNaN(Number(threshold.trim()))) {
+        console.log("ran");
         t_v = Number(threshold.trim());
         if (!(t_v <= 40 && t_v >= 0)) {
             t_v = 40;
         }
     }
-    var arr = []
+    console.log(t_v);
+    var arr = [];
     for(var i=0;i<5;i++){
         var pts = document.getElementsByClassName("points")[i].value;
         if(pts.trim() !== "" && typeof Number(pts.trim()) === "number"){
