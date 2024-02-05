@@ -10,21 +10,33 @@ function count_consistency(){
     }
     console.log(t_v);
     var arr = [];
-    for(var i=0;i<5;i++){
-        var pts = document.getElementsByClassName("points")[i].value;
-        if(pts.trim() !== "" && typeof Number(pts.trim()) === "number"){
-            var points = Number(pts.trim());
-            if(points >= 0 && points <= 40){
-                if(points > t_v){
+    for (var i = 0; i < 5; i++) {
+    var inputElement = document.getElementsByClassName("points")[i];
+    var pts = inputElement.value;
+    if (pts.trim() !== "") {
+        var points = Number(pts.trim());
+        // Check if the parsed value is a number. isNaN function returns false if the value is a number.
+        if (!isNaN(points)) {
+            if (points < 0 || points > 40) {
+                // If number is outside the range, change the border to red.
+                inputElement.style.border = "1px solid red";
+            } else {
+                // If number is within the range, apply your logic
+                if (points > t_v) {
                     points = t_v;
                 }
                 arr.push(points / t_v);
-            }
-            else{
-                document.getElementsByClassName("points")[i].style.border = "1px solid red";
+                // Reset border if needed when value is corrected by user
+                inputElement.style.border = ""; // Reset to default or specific non-error styling
             }
         }
+        // Optionally, reset border for non-numeric inputs if you want to visually ignore them without error indication
+    } else {
+        // Reset border if the field is empty
+        inputElement.style.border = ""; // Reset to default or specific styling
     }
+    }
+    
 
     if(arr.length < 2){
         for(var i=0;i<5;i++){
