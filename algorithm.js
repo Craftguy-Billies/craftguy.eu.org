@@ -11,7 +11,7 @@ function count_consistency(){
     }
     console.log(t_v);
     var arr = [];
-    for (var i = 0; i < 5; i++) {
+    for (var i = 0; i < 7; i++) {
     var inputElement = document.getElementsByClassName("points")[i];
     var pts = inputElement.value;
     if (pts.trim() !== "") {
@@ -36,7 +36,7 @@ function count_consistency(){
     
 
     if(arr.length < 2){
-        for(var i=0;i<5;i++){
+        for(var i=0;i<7;i++){
             document.getElementsByClassName("points")[i].style.border = "1px solid red";
         }
         document.getElementById("warning").style.display = "block";
