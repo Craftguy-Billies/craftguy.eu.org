@@ -25,6 +25,7 @@
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
+        <form>
         <div><b>Type in your past 1-5 days cp</b></div>
         <div><em>(Not include exercise and diversity)</em></div>
         <br>
@@ -35,7 +36,7 @@
         Day 5 <input type="text" class="points"> cp<br>
         Threshold <input type="text" id="threshold"> cp<br>
         <br>
-        <input type="reset"><input type="button" value="Count!" onclick="count_consistency()"><br>
+        <input type="reset" value="Reset"><span style="width:10px"></span><input type="button" value="Count!" onclick="count_consistency()"></form><br>
         <br>
         <div id="consistency" style="font-size: 30px"></div>
         <script src="algorithm.js"></script>
