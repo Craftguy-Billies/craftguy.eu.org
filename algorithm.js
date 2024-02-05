@@ -43,7 +43,7 @@ function count_consistency(){
         return;
     }
     else{
-        for(var i=0;i<5;i++){
+        for(var i=0;i<7;i++){
             document.getElementsByClassName("points")[i].style.border = "1px solid black";
         }
         document.getElementById("warning").style.display = "none";
