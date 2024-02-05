@@ -10,7 +10,7 @@ Thank you for coming here!
 Latest Project: Consistency rate
 Link: https://www.craftguy.eu.org/consistency.html
 
-<code>
+```
 function count_consistency(){
     var threshold = document.getElementById("threshold").value;
     var t_v = 40;
@@ -102,4 +102,4 @@ function count_consistency(){
         l_c = [];
     }
 }
-</code>
+```
