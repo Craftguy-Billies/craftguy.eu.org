@@ -1,5 +1,6 @@
 function count_consistency(){
     var threshold = document.getElementById("threshold").value;
+    var t_v = 40;
     if (threshold.trim() !== "" && !isNaN(Number(threshold.trim()))) {
         t_v = Number(threshold.trim());
         if (!(t_v <= 40 && t_v >= 0)) {
