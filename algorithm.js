@@ -28,10 +28,9 @@ function count_consistency(){
                 inputElement.style.border = "";
             }
         }
-        // Optionally, reset border for non-numeric inputs to visually ignore them without error indication
+        // Reset border for non-numeric inputs to visually ignore them without error indication
     } else {
-        // Reset border if the field is empty
-        inputElement.style.border = ""; // Reset to default or specific styling
+        inputElement.style.border = "";
     }
     }
     
