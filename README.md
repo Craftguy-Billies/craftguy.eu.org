@@ -1,6 +1,6 @@
-This website is the only official website of Craftguy.
+<h1>This website is the only official website of Craftguy.</h1>
 
-English website: https://www.craftguy.eu.org/
+English website: https://www.craftguy.eu.org/ <br>
 Chinese website: https://www.craftguy.eu.org/zh/
 
 Subscribe to Craftguy: htttps://www.youtube.com/c/Craftguy?sub_confirmation=1
