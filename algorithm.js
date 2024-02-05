@@ -1,6 +1,7 @@
 function count_consistency(){
     var threshold = document.getElementById("threshold").value;
     var t_v = 40;
+    var l_c = [];
     if (threshold.trim() !== "" && !isNaN(Number(threshold.trim()))) {
         console.log("ran");
         t_v = Number(threshold.trim());
@@ -19,7 +20,7 @@ function count_consistency(){
         if (!isNaN(points)) {
             if (points < 0 || points > 40) {
                 // If number is outside the range, change the border to red.
-                inputElement.style.border = "1px solid red";
+                l_c.push(i);
             } else {
                 // If number is within the range, apply your logic
                 if (points > t_v) {
@@ -80,5 +81,12 @@ function count_consistency(){
     }
     else{
         document.getElementById("consistency").style.color = "black";
+    }
+
+    if (l_c.length > 0){
+        for (var i = 0;i < l_c.length;i ++){
+            document.getElementsByClassName("points")[l_c[i]].style.border = "1px solid red";
+        }
+        l_c = [];
     }
 }
