@@ -47,6 +47,7 @@ function count_consistency(){
         for(var i=0;i<5;i++){
             document.getElementsByClassName("points")[i].style.border = "1px solid black";
         }
+        document.getElementById("warning").style.display = "none";
     }
 
     var c_array = arr.reverse();
