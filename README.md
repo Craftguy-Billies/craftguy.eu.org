@@ -1,4 +1,4 @@
-<h1>This website is the only official website of Craftguy^TM^.</h1>
+<h1>This website is the only official website of Craftguy<sup>TM</sup>.</h1>
 
 English website: https://www.craftguy.eu.org/ <br>
 Chinese website: https://www.craftguy.eu.org/zh/
