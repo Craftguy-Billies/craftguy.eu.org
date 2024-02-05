@@ -16,22 +16,19 @@ function count_consistency(){
     var pts = inputElement.value;
     if (pts.trim() !== "") {
         var points = Number(pts.trim());
-        // Check if the parsed value is a number. isNaN function returns false if the value is a number.
+        // isNaN function returns false if the value is a number.
         if (!isNaN(points)) {
             if (points < 0 || points > 40) {
-                // If number is outside the range, change the border to red.
                 l_c.push(i);
             } else {
-                // If number is within the range, apply your logic
                 if (points > t_v) {
                     points = t_v;
                 }
                 arr.push(points / t_v);
-                // Reset border if needed when value is corrected by user
-                inputElement.style.border = ""; // Reset to default or specific non-error styling
+                inputElement.style.border = "";
             }
         }
-        // Optionally, reset border for non-numeric inputs if you want to visually ignore them without error indication
+        // Optionally, reset border for non-numeric inputs to visually ignore them without error indication
     } else {
         // Reset border if the field is empty
         inputElement.style.border = ""; // Reset to default or specific styling
