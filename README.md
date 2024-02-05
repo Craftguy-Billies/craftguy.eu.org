@@ -7,8 +7,7 @@ Subscribe to Craftguy: htttps://www.youtube.com/c/Craftguy?sub_confirmation=1
 
 Thank you for coming here!
 
-Latest Project: Consistency rate
-Link: https://www.craftguy.eu.org/consistency.html
+<h3>Latest Project: Consistency rate</h3>
 
 ```
 function count_consistency(){
