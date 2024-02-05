@@ -40,6 +40,7 @@ function count_consistency(){
         for(var i=0;i<5;i++){
             document.getElementsByClassName("points")[i].style.border = "1px solid red";
         }
+        document.getElementById("warning").style.display = "block";
         return;
     }
     else{
