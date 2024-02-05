@@ -20,6 +20,9 @@ function count_consistency(){
                 }
                 arr.push(points / t_v);
             }
+            else{
+                document.getElementsByClassName("points")[i].style.border = "1px solid red";
+            }
         }
     }
 
