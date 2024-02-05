@@ -1,13 +1,12 @@
 function count_consistency(){
     var threshold = document.getElementById("threshold").value;
     if(Number(threshold.trim()) !== "" && typeof Number(threshold.trim()) === "number"){
-        if(t_v <= 40 && t_v >= 0){
-            t_v = Number(threshold.trim());
-        }
-        else{
+        t_v = Number(threshold.trim());
+        if(!(t_v <= 40 && t_v >= 0)){
             t_v = 40;
-    } else{
-        t_v = 40;
+        } else{
+            t_v = 40;
+        }
     }
     var arr = []
     for(var i=0;i<5;i++){
